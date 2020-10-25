@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUp from './SignUp'; 
+import SignIn from './SignIn'; 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -107,7 +107,7 @@ export default function SignIn() {
               color="primary"
               className={classes.submit}
             >
-              Sign In
+              Sign Up
             </Button>
             {/* <Grid container>
               <Grid item xs>
@@ -116,8 +116,8 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link to="/SignUp" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link to="/SignIn" variant="body2">
+                  {"Already have an account? Sign In"}
                 </Link>
               </Grid>
             </Grid> */}
