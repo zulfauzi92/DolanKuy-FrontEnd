@@ -122,7 +122,7 @@ function Dashboard() {
                 </Carousel.Item>
             </Carousel>
             <Container className='my-5'>
-                <h2 className='text'>Tempat Wisata Indonesia</h2>
+                <h2 style={brand}>Tempat Wisata Indonesia</h2>
                 <CardColumns className='my-3'>
                     <Card style={{width: '22rem'}}>
                         <Card.Img src={contoh} variant='top'/>
