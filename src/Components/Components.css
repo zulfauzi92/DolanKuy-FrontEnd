@@ -35,3 +35,39 @@
     width: 100%;
     max-height: 550px;
 }
+
+.judulFooter {
+    color: #979797;
+    font-family: Montserrat;
+    text-align: center;
+    font-weight: bold;
+}
+
+.teksFooter {
+    color: #979797;
+    font-family: Montserrat;
+    text-align: center;
+}
+
+.judulGambar {
+    font-family: Montserrat;
+    font-weight: 600;
+}
+
+.card {
+    width: 22rem;
+    border-radius: 0%;
+}
+
+.buttonCard {
+    color : white;
+    background-color : #FF6329;
+    font-family : Montserrat;
+}
+
+.buttonCard1 {
+    border-radius: 0%;
+    color:white;
+    background-color: #FF6329;
+    font-family: Montserrat;
+}

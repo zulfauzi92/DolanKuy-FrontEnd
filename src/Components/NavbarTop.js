@@ -1,5 +1,5 @@
 import React from 'react';
-import './Components/Components.css';
+import './Components.css';
 import {Button, Container, Nav, Navbar, Form} from 'react-bootstrap';
 
 const NavbarTop = () => {

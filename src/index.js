@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import SignIn from './Pages/Auth/SignIn';
+import Akomodasi from './Pages/Akomodasi';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SignIn />
+    <Akomodasi />
   </React.StrictMode>,
   document.getElementById('root')
 );
