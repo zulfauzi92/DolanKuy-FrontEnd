@@ -1,71 +1,71 @@
 
-.brand {
+#brand {
     color: #FF6329;
     font-family: Montserrat;
     font-weight: 600;
 }
 
-.navLink {
+#navLink {
     color: #FF6329;
     font-family: Montserrat;
     font-weight: bold;
 }
 
-.buttonSignUp {
+#buttonSignUp {
     color: #FF6329;
     border-color: #FF6329; 
     font-family: Montserrat;
     font-weight: bold;
 }
 
-.buttonLogIn {
+#buttonLogIn {
     color: white;
     background-color: #FF6329; 
     font-family: Montserrat;
     font-weight: bold;
 }
 
-.profile {
+#profile {
     border-radius: 50%; 
     width: 40px; 
     height: 40px;
 }
 
-.image {
+#image {
     width: 100%;
     max-height: 550px;
 }
 
-.judulFooter {
+#judulFooter {
     color: #979797;
     font-family: Montserrat;
     text-align: center;
     font-weight: bold;
 }
 
-.teksFooter {
+#teksFooter {
     color: #979797;
     font-family: Montserrat;
     text-align: center;
 }
 
-.judulGambar {
+#judulGambar {
     font-family: Montserrat;
     font-weight: 600;
 }
 
-.card {
+#card {
     width: 22rem;
     border-radius: 0%;
 }
 
-.buttonCard {
+#buttonCard {
     color : white;
     background-color : #FF6329;
     font-family : Montserrat;
 }
 
-.buttonCard1 {
+#buttonCard1 {
     border-radius: 0%;
     color:white;
     background-color: #FF6329;

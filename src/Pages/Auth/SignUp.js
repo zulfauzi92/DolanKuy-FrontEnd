@@ -5,7 +5,7 @@ import {Row, Col, Form, Button, InputGroup} from 'react-bootstrap';
 import LeftSide from "./LeftSide";
 import NavbarTop from "../../Components/NavbarTop";
 
-function SignIn() {
+function SignUp() {
     return (
       <div className="App">
         <NavbarTop />
@@ -16,7 +16,7 @@ function SignIn() {
                 <br/>
                 <br/>
                 <Form style={{width:"60%", marginLeft:"10%", marginTop:"10%"}}>
-                <h2>Sign In</h2>
+                <h2>Sign Up</h2>
                 <br/>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Enter your email</Form.Label>
@@ -42,4 +42,4 @@ function SignIn() {
     );
 }
 
-export default SignIn;
+export default SignUp;
