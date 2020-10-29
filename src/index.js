@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import Dashboard from './Pages/Dashboard';
-import App from './App';
+import SignIn from './Pages/Auth/SignIn';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SignIn />
   </React.StrictMode>,
   document.getElementById('root')
 );
