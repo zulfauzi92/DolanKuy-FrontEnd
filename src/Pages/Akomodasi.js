@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarTop from "../Components/NavbarTop";
 import Footer from "../Components/Footer";
-import contoh from './contoh.jpg';
+import contoh from '../Components/Gallery/contoh.jpg';
 import '../Components/Components.css'
 import {Button, Container, Card, CardColumns, CardDeck, Row, Col} from 'react-bootstrap';
 

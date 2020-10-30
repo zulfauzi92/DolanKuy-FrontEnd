@@ -1,6 +1,6 @@
 import React from 'react';
 import './Components.css';
-import DolanKuy from '../Pages/Gallery/DolanKuy.png';
+import DolanKuy from './Gallery/DolanKuy.png';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import {Container,Jumbotron, Row, Col} from 'react-bootstrap';
 
