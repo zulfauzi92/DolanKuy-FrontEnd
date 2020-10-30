@@ -42,7 +42,7 @@ Structure :
 #image {
     width: 100%;
     max-height: 550px;
-    verticalAlign: 'middle',
+    vertical-align: 'middle',
 }
 
 #judulFooter {
@@ -83,7 +83,7 @@ Structure :
 
 #container {
     position: relative;
-    maxWidth: 1350px;
+    max-width: 1350px;
     margin: 0 auto;
 }
 
@@ -133,7 +133,7 @@ Structure :
     position: absolute;
     top: 50%;
     left: 50%;
-    ms-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
