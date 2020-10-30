@@ -1,9 +1,9 @@
 import React from 'react';
 import NavbarTop from "../Components/NavbarTop";
 import Footer from "../Components/Footer";
-import contoh from './contoh.jpg';
-import contoh1 from './contoh1.jpg';
-import contoh2 from './contoh2.jpg';
+import contoh from './Gallery/contoh.jpg';
+import contoh1 from './Gallery/contoh1.jpg';
+import contoh2 from './Gallery/contoh2.jpg';
 import '../Components/Components.css'
 import {Button, Container, Carousel, Card, CardColumns} from 'react-bootstrap';
 

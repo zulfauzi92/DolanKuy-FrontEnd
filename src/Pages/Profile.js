@@ -1,6 +1,6 @@
 import React from 'react';
-import DolanKuy from './DolanKuy.png';
-import avatar from './avatar.jpg';
+import DolanKuy from './Gallery/DolanKuy.png';
+import avatar from './Gallery/avatar.jpg';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import {Button, Container, Nav, Navbar, Form, Jumbotron, Row, Col} from 'react-bootstrap';
 

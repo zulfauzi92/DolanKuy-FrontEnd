@@ -1,9 +1,6 @@
 import React from 'react';
-import contoh from './contoh.jpg';
-//import contoh1 from './contoh1.jpg';
-//import contoh2 from './contoh2.jpg';
-import DolanKuy from './DolanKuy.png';
-//import avatar from './avatar.jpg';
+import contoh from './Gallery/contoh.jpg';
+import DolanKuy from './Gallery/DolanKuy.png';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import {Button, Container, Nav, Navbar, Form, Card, CardColumns, Jumbotron, Row, Col} from 'react-bootstrap';
 

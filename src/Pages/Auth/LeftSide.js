@@ -5,7 +5,7 @@ const LeftSide = () => {
     return (
         <div>
            {/* <Image src="./Pages/contoh.jpg" style={{border:"none"}} />  */}
-           <Image src="./Pages/contoh.jpg" fluid />
+           <Image src="./Pages/Gallery/contoh.jpg" fluid />
         </div>
     )
 }

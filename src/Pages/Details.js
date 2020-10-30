@@ -1,9 +1,9 @@
 import React from 'react';
-import contoh from './contoh.jpg';
-import contoh1 from './contoh1.jpg';
-import contoh2 from './contoh2.jpg';
-import map from './map.jpg';
-import DolanKuy from './DolanKuy.png';
+import contoh from './Gallery/contoh.jpg';
+import contoh1 from './Gallery/contoh1.jpg';
+import contoh2 from './Gallery/contoh2.jpg';
+import map from './Gallery/map.jpg';
+import DolanKuy from './Gallery/DolanKuy.png';
 //import avatar from './avatar.jpg';
 import { FaEnvelope, FaPhoneAlt, FaTags, FaMapMarkerAlt } from 'react-icons/fa';
 import { TiStar } from 'react-icons/ti';
