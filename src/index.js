@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import SignIn from './Pages/Auth/SignIn';
+import Dashboard from './Pages/Dashboard';
+import Details from './Pages/Details';
+import Akomodasi from './Pages/Akomodasi';
+import ListWisata from './Pages/ListWisata';
+import Profile from './Pages/Profile';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Profile />
   </React.StrictMode>,
   document.getElementById('root')
 );
