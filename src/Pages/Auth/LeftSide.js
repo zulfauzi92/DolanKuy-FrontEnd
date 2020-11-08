@@ -1,11 +1,12 @@
 import React from 'react';
 import {Image} from "react-bootstrap";
+import Logo from '../../Components/Gallery/DolanKuy.png'
 
 const LeftSide = () => {
     return (
         <div>
-           {/* <Image src="./Pages/contoh.jpg" style={{border:"none"}} />  */}
-           <Image src="../../Components/Gallery/contoh.jpg" fluid />
+           
+          <img src={Logo}></img>
         </div>
     )
 }
