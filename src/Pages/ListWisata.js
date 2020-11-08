@@ -1,48 +1,22 @@
 import React from 'react';
-import contoh from './contoh.jpg';
-//import contoh1 from './contoh1.jpg';
-//import contoh2 from './contoh2.jpg';
-import DolanKuy from './DolanKuy.png';
-//import avatar from './avatar.jpg';
-import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
-import {Button, Container, Nav, Navbar, Form, Card, CardColumns, Jumbotron, Row, Col} from 'react-bootstrap';
+import '../Components/Components.css'
+import NavbarTop from "../Components/NavbarTop";
+import Footer from "../Components/Footer";
+import contoh from '../Components/Gallery/contoh.jpg';
+import {Button, Container, Card, CardColumns, Row, Col} from 'react-bootstrap';
+import { MdPlace } from 'react-icons/md';
+import { MdGrade } from 'react-icons/md';
+import { BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom';
 
 const brand = {
     color: '#FF6329',
     fontFamily: 'Montserrat',
     fontWeight: '600',
 };
-
-const navLink = {
-    color: '#FF6329', 
-    fontFamily: 'Montserrat', 
-    fontWeight: 'bold',
-};
-
-const buttonSignUp = {
-    color:'#FF6329', 
-    borderColor:'#FF6329', 
-    fontFamily: 'Montserrat', 
-    fontWeight: 'bold',
-};
-
-const buttonLogIn = {
-    color:'white', 
-    backgroundColor: '#FF6329', 
-    fontFamily: 'Montserrat', 
-    fontWeight: 'bold',
-};
-
-/*const profile = {
-    borderRadius: "50%", 
-    width: "40px", 
-    height: "40px",
-};*/
-
-/*const image = {
-    width: '100%',
-    maxHeight: '550px',
-};*/
 
 const judulGambar = {
     fontFamily: 'Montserrat', 
@@ -55,78 +29,41 @@ const buttonCard = {
     fontFamily: 'Montserrat',
 };
 
-const judulFooter = {
-    color: '#979797', 
-    fontFamily: 'Montserrat', 
-    textAlign: 'center', 
-    fontWeight: 'bold',
-};
-
-const teksFooter = {
-    color: '#979797', 
-    fontFamily: 'Montserrat', 
-    textAlign: 'center',
-};
-
 function ListWisata() {
     return (
+
+
         <div>
-            <Container className='mb-5' fluid>
-                <Navbar className='border' style={{backgroundColor: 'white'}} fixed="top">
-                    <Navbar.Brand style={brand}>DolanKuy</Navbar.Brand>
-                    <Navbar.Collapse id='responsive-navbar-nav'>
-                        <Nav className="ml-auto">
-                            <Form inline>
-                                <Form.Control className='mr-sm-2' style={{fontFamily: 'Montserrat'}} placeholder='search'
-                                />
-                            </Form>
-                            <Nav.Item>
-                                <Nav.Link style={navLink}>List Wisata</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link style={navLink}>Akomodasi</Nav.Link>
-                            </Nav.Item>
-                            <Button className="mx-2" style={buttonLogIn} variant="basic">Login</Button>
-                            <Button className="mx-2" style={buttonSignUp} variant="basic">Sign Up</Button>
-                            {
-                                //Tampilan sesudah Login
-                                //<Nav.Item>
-                                //<img style={profile} src={contoh} alt='profile'/>
-                                //</Nav.Item>
-                            }
-                        </Nav>
-                    </Navbar.Collapse>  
-                </Navbar>
-            </Container>
+            <NavbarTop/>
             <Container className='my-5'>
                 <Row>
                     <Col className='mt-5'>
-                        <h2 style={brand}>Event</h2>
+                        <h2 id="brand">Event</h2>
                     </Col>
                 </Row>
                 <CardColumns className='my-2'>
                     <Card style={{width: '22rem'}}>
                         <Card.Img src={contoh} variant='top'/>
                         <Card.Body>
-                            <Card.Title style={judulGambar}>Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
+                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button style={buttonCard} variant='block'>Details</Button>
+                            <Button id="buttonCard" variant='block'>Details</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{width: '22rem'}}>
                         <Card.Img src={contoh} variant='top'/>
                         <Card.Body>
-                            <Card.Title style={judulGambar}>Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
+                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button style={buttonCard} variant='block'>Details</Button>
+                            <Button id="buttonCard" variant='block'>Details</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{width: '22rem'}}>
                         <Card.Img src={contoh} variant='top'/>
                         <Card.Body>
-                            <Card.Title style={judulGambar}>Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
+                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button style={buttonCard} variant='block'>Details</Button>
+                            <Button id="buttonCard" variant='block'>Details</Button>
                         </Card.Body>
                     </Card>
                 </CardColumns>
@@ -134,55 +71,146 @@ function ListWisata() {
             <Container className='my-5'>
                 <Row>
                     <Col className='mt-5'>
-                        <h2 style={brand}>Tempat Wisata di Jogjakarta</h2>
+                        <h2 id="brand">Tempat Wisata di Jogjakarta</h2>
                     </Col>
                 </Row>
-                <CardColumns className='my-2'>
-                    <Card style={{width: '22rem'}}>
-                        <Card.Img src={contoh} variant='top'/>
-                        <Card.Body>
-                            <Card.Title style={judulGambar}>Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
-                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button style={buttonCard} variant='block'>Details</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{width: '22rem'}}>
-                        <Card.Img src={contoh} variant='top'/>
-                        <Card.Body>
-                            <Card.Title style={judulGambar}>Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
-                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button style={buttonCard} variant='block'>Details</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{width: '22rem'}}>
-                        <Card.Img src={contoh} variant='top'/>
-                        <Card.Body>
-                            <Card.Title style={judulGambar}>Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
-                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button style={buttonCard} variant='block'>Details</Button>
-                        </Card.Body>
-                    </Card>
-                </CardColumns>
-            </Container>
-            <Jumbotron className="mb-0" fluid>
-                <Container>
-                    <Row>
-                        <Col>
-                            <img width="159" height="121" src={DolanKuy} alt='logo'/>
+                <Container className="border" id="cardList">
+                        <Row>
+                        <Col xs={6} md={4}>
+                        <img id="imageListCard" src={contoh}></img>
                         </Col>
-                        <Col>
-                            <h5 style={judulFooter}>About Us</h5>
-                            <p style={teksFooter}>DolanKuy adalah Aplikasi sebagai referensi wisata yang ada di suatu daerah</p>
+                        <Col xs={6} md={4}>
+                            <Row> <h5>Wisata Taman Sari, Menghayalkan Para Putri</h5> </Row>
+                            <Row> <p>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</p></Row>
+                            <Row><p id="ratingListCard">4.5<MdGrade color="orange"/></p></Row>
+                            <Row>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            </Row>
                         </Col>
-                        <Col>
-                            <h5 style={judulFooter}>Contact</h5>
-                            <p style={teksFooter}><FaEnvelope/> ouremail@gmail.com</p>
-                            <p style={teksFooter}><FaPhoneAlt/> +62 8123 4567 8374</p>
+                        <Col xs={6} md={4}>
+                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
+                        <Button id="detailsButtonCard">Details</Button>
                         </Col>
                     </Row>
                 </Container>
-            </Jumbotron>
+
+                <Container className="border" id="cardList">
+                        <Row>
+                        <Col xs={6} md={4}>
+                        <img id="imageListCard" src={contoh}></img>
+                        </Col>
+                        <Col xs={6} md={4}>
+                            <Row> <h5>Wisata Taman Sari, Menghayalkan Para Putri</h5> </Row>
+                            <Row> <p>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</p></Row>
+                            <Row><p id="ratingListCard">4.5<MdGrade color="orange"/></p></Row>
+                            <Row>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            </Row>
+                        </Col>
+                        <Col xs={6} md={4}>
+                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
+                        <Button id="detailsButtonCard">Details</Button>
+                        </Col>
+                    </Row>
+                </Container>
+
+                <Container className="border" id="cardList">
+                        <Row>
+                        <Col xs={6} md={4}>
+                        <img id="imageListCard" src={contoh}></img>
+                        </Col>
+                        <Col xs={6} md={4}>
+                            <Row> <h5>Wisata Taman Sari, Menghayalkan Para Putri</h5> </Row>
+                            <Row> <p>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</p></Row>
+                            <Row><p id="ratingListCard">4.5<MdGrade color="orange"/></p></Row>
+                            <Row>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            </Row>
+                        </Col>
+                        <Col xs={6} md={4}>
+                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
+                        <Button id="detailsButtonCard">Details</Button>
+                        </Col>
+                    </Row>
+                </Container>
+
+                <Container className="border" id="cardList" >
+                        <Row>
+                        <Col xs={6} md={4}>
+                        <img id="imageListCard" src={contoh}></img>
+                        </Col>
+                        <Col xs={6} md={4} >
+                            <Row> <h5>Wisata Taman Sari, Menghayalkan Para Putri</h5> </Row>
+                            <Row> <p>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</p></Row>
+                            <Row><p id="ratingListCard">4.5<MdGrade color="orange"/></p></Row>
+                            <Row>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            <Button id="tagCard">Default</Button>
+                            </Row>
+                        </Col>
+                        <Col xs={6} md={4}>
+                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
+                        <Button id="detailsButtonCard">Details</Button>
+                        </Col>
+                    </Row>
+                </Container>
+
+                    {/* <Card >
+                        <Card.Body id="cardHorizontal">
+                            <Card.Img id="imageCardHorizontal" src={contoh}/>
+                            <Card.Title>Wisata Taman Sari, Menghayalkan Para Putri</Card.Title>
+                            <Card.Text>
+                            Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.
+                            </Card.Text>
+                            <Button id="cardListButton">Details</Button>
+                        </Card.Body>
+                    </Card>
+                
+                 */}
+                   
+               
+                {/* <CardColumns className='my-2'>
+                    <Card style={{width: '22rem'}}>
+                        <Card.Img src={contoh} variant='top'/>
+                        <Card.Body>
+                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
+                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
+                            <Button id="buttonCard" variant='block'>Details</Button>
+                        </Card.Body>
+                    </Card>
+                    <Card style={{width: '22rem'}}>
+                        <Card.Img src={contoh} variant='top'/>
+                        <Card.Body>
+                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
+                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
+                            <Button id="buttonCard" variant='block'>Details</Button>
+                        </Card.Body>
+                    </Card>
+                    <Card style={{width: '22rem'}}>
+                        <Card.Img src={contoh} variant='top'/>
+                        <Card.Body>
+                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
+                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
+                            <Button id="buttonCard" variant='block'>Details</Button>
+                        </Card.Body>
+                    </Card>
+                </CardColumns> */}
+            </Container>
+            <Footer/>
         </div>
+
+        
     );
 }
 
