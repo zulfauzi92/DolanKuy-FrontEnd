@@ -9,6 +9,8 @@ import ListWisata from './Pages/ListWisata';
 import Profile from './Pages/Profile';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Section from './Components/routing/Section';
 
 ReactDOM.render(
   <React.StrictMode>
