@@ -42,7 +42,7 @@ function Dashboard() {
             <Container className='my-5'>
                 <h2 id="brand">Tempat Wisata Indonesia</h2>
                 <CardColumns className='my-3'>
-                    <Card style={{width: '22rem'}}>
+                    <Card style={{width: '100%'}}>
                         <Card.Img src={contoh} variant='top'/>
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
@@ -52,7 +52,7 @@ function Dashboard() {
                             </Link>
                         </Card.Body>
                     </Card>
-                    <Card style={{width: '22rem'}}>
+                    <Card style={{width: '100%'}}>
                         <Card.Img src={contoh} variant='top'/>
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
@@ -62,7 +62,7 @@ function Dashboard() {
                             </Link>
                         </Card.Body>
                     </Card>
-                    <Card style={{width: '22rem'}}>
+                    <Card style={{width: '100%'}}>
                         <Card.Img src={contoh} variant='top'/>
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
