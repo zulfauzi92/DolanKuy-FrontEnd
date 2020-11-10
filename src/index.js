@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import SignIn from './Pages/Auth/SignIn';
+import SignUp from './Pages/Auth/SignUp';
 import Dashboard from './Pages/Dashboard';
 import Details from './Pages/Details';
 import Akomodasi from './Pages/Akomodasi';
@@ -9,17 +10,45 @@ import ListWisata from './Pages/ListWisata';
 import Profile from './Pages/Profile';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter as Router} from 'react-router-dom';
-import Section from './Components/routing/Section';
+import {BrowserRouter as Router,Route,Switch,Link} from 'react-router-dom';
+import NavbarTop from './Components/NavbarTop';
+
 
 ReactDOM.render(
   <React.StrictMode>
-   <Router>
-     <div>
-     <SignIn /> 
-     <Section />
-     </div>   
-   </Router>
+  
+    <Router>
+      <div>
+        <Switch>
+                            <Route
+                              name="Home"
+                              path="/"
+                              exact component={SignIn}>
+                            </Route>
+
+                            <Route
+                              name="List Wisata"
+                              path="/list_wisata"
+                              component={ListWisata}>
+                            </Route>
+
+                            <Route
+                              name="Akomodasi"
+                              path="/akomodasi"
+                              component={Akomodasi}>
+                            </Route>
+
+                            <Route
+                              name="Sign Up"
+                              path="/sign_up"
+                              component={SignUp}>
+                            </Route>
+
+                
+                        </Switch>
+      </div>
+    </Router>
+  
   </React.StrictMode>,
   document.getElementById('root')
 );

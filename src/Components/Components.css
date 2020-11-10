@@ -7,6 +7,12 @@ Structure :
 5. video 
 */
 
+#logo {
+    margin-left: 50%;
+    margin-top: 15%;
+    float: left;
+}
+
 #brand {
     color: #FF6329;
     font-family: Montserrat;

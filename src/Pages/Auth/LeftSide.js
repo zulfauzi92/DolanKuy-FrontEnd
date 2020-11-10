@@ -4,9 +4,8 @@ import Logo from '../../Components/Gallery/DolanKuy.png'
 
 const LeftSide = () => {
     return (
-        <div>
-           
-          <img src={Logo}></img>
+        <div>  
+          <img src={Logo} id="logo"></img>
         </div>
     )
 }
