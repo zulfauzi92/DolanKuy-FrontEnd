@@ -3,7 +3,7 @@ import './Auth.css';
 import "bootstrap/dist/css/bootstrap.css";
 import {Row, Col, Form, Button, InputGroup} from 'react-bootstrap';
 import LeftSide from "./LeftSide";
-import NavbarTop from "../Components/NavbarTop";
+import NavbarTop from "../../Components/NavbarTop";
 
 function SignUp() {
     return (

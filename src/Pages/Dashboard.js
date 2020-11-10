@@ -6,6 +6,11 @@ import contoh1 from '../Components/Gallery/contoh1.jpg';
 import contoh2 from '../Components/Gallery/contoh2.jpg';
 import '../Components/Components.css'
 import {Button, Container, Carousel, Card, CardColumns} from 'react-bootstrap';
+import { BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom';
 
 function Dashboard() {
     return (
@@ -42,7 +47,9 @@ function Dashboard() {
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
+                            <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                     <Card style={{width: '22rem'}}>
@@ -50,7 +57,9 @@ function Dashboard() {
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
+                            <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                     <Card style={{width: '22rem'}}>
@@ -58,7 +67,9 @@ function Dashboard() {
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
+                            <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                 </CardColumns>
