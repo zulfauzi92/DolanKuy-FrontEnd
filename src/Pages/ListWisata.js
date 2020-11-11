@@ -6,11 +6,7 @@ import contoh from '../Components/Gallery/contoh.jpg';
 import {Button, Container, Card, CardColumns, Row, Col} from 'react-bootstrap';
 import { MdPlace } from 'react-icons/md';
 import { MdGrade } from 'react-icons/md';
-import { BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom';
+
 
 const brand = {
     color: '#FF6329',

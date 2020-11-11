@@ -11,7 +11,7 @@ import Profile from './Pages/Profile';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router,Route,Switch,Link} from 'react-router-dom';
-import NavbarTop from './Components/NavbarTop';
+
 
 
 ReactDOM.render(

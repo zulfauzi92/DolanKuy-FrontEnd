@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './Components.css';
 import {Button, Container, Nav, Navbar, Form} from 'react-bootstrap';
 import {BrowserRouter as Router,Route,Link,Switch} from 'react-router-dom';
-import ListWisata from '../Pages/ListWisata'
-import Akomodasi from '../Pages/Akomodasi'
-import SignIn from '../Pages/Auth/SignIn';
+
 
 
 const NavbarTop = () => {
