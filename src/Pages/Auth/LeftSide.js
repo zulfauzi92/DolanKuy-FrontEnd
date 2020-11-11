@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image} from "react-bootstrap";
-import Logo from '../../Components/Gallery/DolanKuy.png'
+import Logo from '../../Components/Gallery/contoh.jpg'
 
 const LeftSide = () => {
     return (
