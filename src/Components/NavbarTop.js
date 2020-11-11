@@ -50,17 +50,17 @@ const NavbarTop = () => {
                                 </Nav.Link>      
                             </Nav.Item>
                             
-                            <Button id="buttonLogIn" className="mx-2" variant="basic">
-                                <Link id="buttonLogIn" to="/sign_in">
+                            <Link id="loginButton" to="/sign_in">
+                                <Button id="loginButton" className="mx-2" variant="basic">
                                     Login
-                                </Link>
-                            </Button>
+                                </Button>
+                            </Link>
 
-                            <Button id="buttonSignUp" className="mx-2" variant="basic">
-                                <Link id="buttonSignUp" to="/sign_up">
+                            <Link id="signUpButton" to="/sign_up">
+                                <Button id="signUpButton" className="mx-2" variant="basic">
                                     Sign Up
-                                </Link>
-                            </Button>
+                                </Button>
+                            </Link>
 
                         
                            
