@@ -8,7 +8,7 @@ import NavbarTop from "../../Components/NavbarTop";
 function SignUp() {
     return (
       <div className="App">
-        <NavbarTop />
+          <NavbarTop/>
         <Row className="landing">
             <Col><LeftSide /></Col>
             <Col xs lg="5">

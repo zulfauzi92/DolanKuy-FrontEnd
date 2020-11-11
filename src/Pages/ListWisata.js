@@ -47,7 +47,9 @@ function ListWisata() {
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
+                            <Link id="buttonCard" to="/details">
+                                <Button id="buttonCard" variant='block'>Details</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                     <Card style={{width: '22rem'}}>
@@ -55,7 +57,9 @@ function ListWisata() {
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
+                            <Link id="buttonCard" to="/details">
+                                <Button id="buttonCard" variant='block'>Details</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                     <Card style={{width: '22rem'}}>
@@ -63,11 +67,14 @@ function ListWisata() {
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
+                            <Link id="buttonCard" to="/details">
+                                <Button id="buttonCard" variant='block'>Details</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                 </CardColumns>
             </Container>
+
             <Container className='my-5'>
                 <Row>
                     <Col className='mt-5'>
@@ -75,7 +82,7 @@ function ListWisata() {
                     </Col>
                 </Row>
                 <Container className="border" id="cardList">
-                        <Row>
+                    <Row >
                         <Col xs={6} md={4}>
                         <img id="imageListCard" src={contoh}></img>
                         </Col>
@@ -90,13 +97,23 @@ function ListWisata() {
                             <Button id="tagCard">Default</Button>
                             </Row>
                         </Col>
+                        
                         <Col xs={6} md={4}>
-                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
-                        <Button id="detailsButtonCard">Details</Button>
+                            
+                            <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
+                            
+                            
                         </Col>
+                        <Col xs={6} md={4}>
+                                <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                                </Link>
+                        </Col>
+                        
                     </Row>
+                    
                 </Container>
-
+                <br></br>
                 <Container className="border" id="cardList">
                         <Row>
                         <Col xs={6} md={4}>
@@ -114,12 +131,16 @@ function ListWisata() {
                             </Row>
                         </Col>
                         <Col xs={6} md={4}>
-                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
-                        <Button id="detailsButtonCard">Details</Button>
+                            <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>
+                        </Col>
+                        <Col xs={6} md={4}>
+                                <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                                </Link>
                         </Col>
                     </Row>
                 </Container>
-
+                <br></br>
                 <Container className="border" id="cardList">
                         <Row>
                         <Col xs={6} md={4}>
@@ -137,12 +158,16 @@ function ListWisata() {
                             </Row>
                         </Col>
                         <Col xs={6} md={4}>
-                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
-                        <Button id="detailsButtonCard">Details</Button>
+                            <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>
+                        </Col>
+                        <Col xs={6} md={4}>
+                                <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                                </Link>
                         </Col>
                     </Row>
                 </Container>
-
+                <br></br>
                 <Container className="border" id="cardList" >
                         <Row>
                         <Col xs={6} md={4}>
@@ -160,9 +185,14 @@ function ListWisata() {
                             </Row>
                         </Col>
                         <Col xs={6} md={4}>
-                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
-                        <Button id="detailsButtonCard">Details</Button>
+                            <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>
                         </Col>
+                        <Col xs={6} md={4}>
+                                <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                                </Link>
+                        </Col>
+                        
                     </Row>
                 </Container>
             </Container>
