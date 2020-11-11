@@ -22,8 +22,14 @@ ReactDOM.render(
         <Switch>
                             <Route
                               name="Home"
-                              path="/"
-                              exact component={SignIn}>
+                              path="/dashboard"
+                              exact component={Dashboard}>
+                            </Route>
+
+                            <Route
+                              name="Details"
+                              path="/details"
+                              exact component={Details}>
                             </Route>
 
                             <Route
@@ -42,6 +48,12 @@ ReactDOM.render(
                               name="Sign Up"
                               path="/sign_up"
                               component={SignUp}>
+                            </Route>
+
+                            <Route
+                              name="Sign In"
+                              path="/sign_in"
+                              component={SignIn}>
                             </Route>
 
                 

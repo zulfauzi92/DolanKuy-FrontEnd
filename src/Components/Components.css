@@ -8,9 +8,7 @@ Structure :
 */
 
 #logo {
-    margin-left: 50%;
-    margin-top: 15%;
-    float: left;
+    width: 103%;
 }
 
 #brand {
@@ -25,14 +23,14 @@ Structure :
     font-weight: bold;
 }
 
-#buttonSignUp {
+#signUpButton {
     color: #FF6329;
     border-color: #FF6329; 
     font-family: Montserrat;
     font-weight: bold;
 }
 
-#buttonLogIn {
+#loginButton {
     color: white;
     background-color: #FF6329; 
     font-family: Montserrat;
@@ -168,7 +166,7 @@ Structure :
     background: rgba(0, 0, 0, 0.3); /* Black background with 0.5 opacity */
     color: #f1f1f1;
     width: 100%;
-    padding: 20px;
+    padding: 2%;
 }
 
 #icon {
@@ -178,7 +176,7 @@ Structure :
 
 #deskripsi {
     font-family: Roboto;
-    font-size: 18.72px;
+    font-size: 20px;
     text-align: justify;
 }
 
@@ -199,7 +197,7 @@ Structure :
 }
 
 #video {
-    width: 800px;
+    width: 80%;
     max-height: 800px;
     border-radius: 5%;
     margin: 0;
@@ -212,8 +210,8 @@ Structure :
 
 #profilePicture {
     border-radius: 50%;
-    width: 300px;
-    height: 300px;
+    width: 60%;
+    height: 80%;
 }
 
 #editProfile {
