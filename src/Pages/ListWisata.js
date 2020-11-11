@@ -6,6 +6,7 @@ import contoh from '../Components/Gallery/contoh.jpg';
 import {Button, Container, Card, CardColumns, Row, Col} from 'react-bootstrap';
 import { MdPlace } from 'react-icons/md';
 import { MdGrade } from 'react-icons/md';
+import Details from '../Pages/Details';
 import {Link} from 'react-router-dom';
 
 const brand = {

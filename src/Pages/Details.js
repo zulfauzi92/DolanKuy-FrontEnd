@@ -10,7 +10,7 @@ import { FaPhoneAlt, FaTags, FaMapMarkerAlt } from 'react-icons/fa';
 import { TiStar } from 'react-icons/ti';
 import { BsFillClockFill } from 'react-icons/bs';
 import { Badge, ResponsiveEmbed, Container, Image, Row, Col } from 'react-bootstrap';
-import axios from "axios";
+import axios from 'axios';
 
 function Details() {
     React.useEffect(() => {

@@ -16,6 +16,7 @@ function Dashboard() {
     return (
         <div>
             <NavbarTop/>
+            <Container>
             <Carousel>
                 <Carousel.Item className="mt-2" active>
                     <img id="image" src={contoh} alt='1'/>
@@ -75,6 +76,7 @@ function Dashboard() {
                 </CardColumns>
             </Container>
             <Footer/>
+            </Container>
         </div>
     );
 }

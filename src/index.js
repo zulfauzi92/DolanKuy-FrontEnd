@@ -22,7 +22,7 @@ ReactDOM.render(
         <Switch>
                             <Route
                               name="Home"
-                              path="/dashboard"
+                              path="/"
                               exact component={Dashboard}>
                             </Route>
 
