@@ -8,15 +8,17 @@ import NavbarTop from "../../Components/NavbarTop";
 function SignUp() {
     return (
       <div className="App">
-          <NavbarTop/>
+        <NavbarTop />
         <Row className="landing">
             <Col><LeftSide /></Col>
             <Col xs lg="5">
-                <Form style={{width:"60%", marginLeft:"10%", marginTop:"20%"}}>
-                <b style={{fontSize:"40pt"}}>Create New</b>
                 <br/>
-                <b style={{fontSize:"40pt"}}>Account</b>
-                    <Form.Group controlId="formBasicEmail" style={{marginTop:"5%"}}>
+                <br/>
+                <br/>
+                <Form style={{width:"60%", marginLeft:"10%", marginTop:"10%"}}>
+                <h2>Sign Up</h2>
+                <br/>
+                    <Form.Group controlId="formBasicEmail">
                         <Form.Label>Enter your email</Form.Label>
                         <Form.Control type="email" placeholder="Enter your email" />
                     </Form.Group>
@@ -31,7 +33,7 @@ function SignUp() {
                     </Form.Group>
 
                     <Button id="buttonLogIn" variant="basic" type="submit" block>
-                        Sign Up
+                        Sign In
                     </Button>
                 </Form>
             </Col>
