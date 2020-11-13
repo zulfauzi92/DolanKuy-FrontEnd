@@ -14,7 +14,7 @@ function Profile() {
                     <Col className="mt-5">
                         <img id="profilePicture" src={avatar} alt='profile'/>
                         <h4 className="mt-5 mx-5" id="editProfile">
-                            <a href='#' style={{color: "black"}}>Edit Photo Profile</a>
+                            <a href='/' style={{color: "black"}}>Edit Photo Profile</a>
                         </h4>
                     </Col>
                     <Col className="mt-5">
