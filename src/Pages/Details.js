@@ -13,33 +13,33 @@ import { Badge, ResponsiveEmbed, Container, Image, Row, Col, Spinner } from 'rea
 import { api } from '../Utils/api';
 
 function Details() {
-    const [listLocation, setListLocation] = React.useState();
-    const [galery, setGalery] = React.useState();
-    const [distance, setDistance] = React.useState();
-    const [loading, setLoading] = React.useState(true);
+    // const [listLocation, setListLocation] = React.useState();
+    // const [galery, setGalery] = React.useState();
+    // const [distance, setDistance] = React.useState();
+    // const [loading, setLoading] = React.useState(true);
     
-    React.useEffect(() => {
-        api
-          .get("locations", { data: { userLong: 1.104, userLat: 1.102 } })
-          .then((res) => {
-            console.log(res);
-            console.log(res.data[1]);
-            setLoading(false);
-            setListLocation(res.data[0][0]);
-            setGalery(res.data[1]);
-            setDistance(res.data[2]);
-          })
-          .catch((err) => {
-            console.log(err);
-            setLoading(false);
-          });
-        return () => {};
-      }, []);
+    // React.useEffect(() => {
+    //     api
+    //       .get("locations", { data: { userLong: 1.104, userLat: 1.102 } })
+    //       .then((res) => {
+    //         console.log(res);
+    //         console.log(res.data[1]);
+    //         setLoading(false);
+    //         setListLocation(res.data[0][0]);
+    //         setGalery(res.data[1]);
+    //         setDistance(res.data[2]);
+    //       })
+    //       .catch((err) => {
+    //         console.log(err);
+    //         setLoading(false);
+    //       });
+    //     return () => {};
+    //   }, []);
 
     return (
       <div>
         <NavbarTop />
-        {loading ? (
+        {/* {loading ? ( */}
           <Row>
             <Col>
               <Spinner
@@ -51,16 +51,16 @@ function Details() {
               </Spinner>
             </Col>
           </Row>
-        ) : !(listLocation && galery && distance) ? (
+        {/* ) : !(listLocation && galery && distance) ? (
           <h1>Error</h1>
-        ) : (
+        ) : ( */}
           <>
             <div id="container">
               <Image className="mt-2" id="image" src={contoh1} fluid />
               <div id="textStyle">
                 <Container>
-                  <h1>{listLocation.name}</h1>
-                  {/* <h1>Wisata Taman Sari, Mengkhayalkan Para Putri</h1> */}
+                  {/* <h1>{listLocation.name}</h1> */}
+                  <h1>Wisata Taman Sari, Mengkhayalkan Para Putri</h1>
                   <h4 style={{ fontWeight: "bold" }}>
                     4.5
                     <TiStar id="icon" />
@@ -154,7 +154,7 @@ function Details() {
             </Container>
             <Footer />
           </>
-        )}
+        {/* )} */}
       </div>
     );
 }
