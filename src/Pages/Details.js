@@ -9,6 +9,7 @@ import map from '../Components/Gallery/map.jpg';
 import { FaPhoneAlt, FaTags, FaMapMarkerAlt } from 'react-icons/fa';
 import { TiStar } from 'react-icons/ti';
 import { BsFillClockFill } from 'react-icons/bs';
+<<<<<<< HEAD
 import { Badge, ResponsiveEmbed, Container, Image, Row, Col, Spinner } from 'react-bootstrap';
 import { api } from '../Utils/api';
 
@@ -36,6 +37,11 @@ function Details() {
         return () => {};
       }, []);
 
+=======
+import { Badge, ResponsiveEmbed, Container, Image, Row, Col } from 'react-bootstrap';
+
+function Details() {
+>>>>>>> e4f656852bce453b906f3c527e81ae356a6aaa92
     return (
       <div>
         <NavbarTop />
