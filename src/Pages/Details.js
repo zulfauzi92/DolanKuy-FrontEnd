@@ -10,36 +10,37 @@ import { FaPhoneAlt, FaTags, FaMapMarkerAlt } from 'react-icons/fa';
 import { TiStar } from 'react-icons/ti';
 import { BsFillClockFill } from 'react-icons/bs';
 import { Badge, ResponsiveEmbed, Container, Image, Row, Col, Spinner } from 'react-bootstrap';
-import { api } from '../Utils/api';
+import { baseURL } from '../Utils/api';
+import axios from "axios";
+import { useParams } from 'react-router-dom';
 
 function Details() {
-    // const [listLocation, setListLocation] = React.useState();
-    // const [galery, setGalery] = React.useState();
-    // const [distance, setDistance] = React.useState();
-    // const [loading, setLoading] = React.useState(true);
+    const { id } = useParams();
+    const [location, setLocation] = React.useState();
+    const [galery, setGalery] = React.useState();
+    const [loading, setLoading] = React.useState(true);
     
-    // React.useEffect(() => {
-    //     api
-    //       .get("locations", { data: { userLong: 1.104, userLat: 1.102 } })
-    //       .then((res) => {
-    //         console.log(res);
-    //         console.log(res.data[1]);
-    //         setLoading(false);
-    //         setListLocation(res.data[0][0]);
-    //         setGalery(res.data[1]);
-    //         setDistance(res.data[2]);
-    //       })
-    //       .catch((err) => {
-    //         console.log(err);
-    //         setLoading(false);
-    //       });
-    //     return () => {};
-    //   }, []);
+    React.useEffect(() => {
+        axios
+          .get(`${baseURL}locations/${id}`)
+          .then((res) => {
+            console.log(res);
+            console.log(res.data);
+            setLoading(false);
+            setLocation(res.data[0]);
+            setGalery(res.data[1]);
+          })
+          .catch((err) => {
+            console.log(err);
+            setLoading(false);
+          });
+        return () => {};
+      }, []);
 
     return (
       <div>
         <NavbarTop />
-        {/* {loading ? ( */}
+        {loading ? (
           <Row>
             <Col>
               <Spinner
@@ -51,16 +52,15 @@ function Details() {
               </Spinner>
             </Col>
           </Row>
-        {/* ) : !(listLocation && galery && distance) ? (
+        ) : !(location && galery) ? (
           <h1>Error</h1>
-        ) : ( */}
+        ) : (
           <>
             <div id="container">
               <Image className="mt-2" id="image" src={contoh1} fluid />
               <div id="textStyle">
                 <Container>
-                  {/* <h1>{listLocation.name}</h1> */}
-                  <h1>Wisata Taman Sari, Mengkhayalkan Para Putri</h1>
+                  <h1>{location.name}</h1>
                   <h4 style={{ fontWeight: "bold" }}>
                     4.5
                     <TiStar id="icon" />
@@ -70,18 +70,7 @@ function Details() {
             </div>
             <Container className="my-5">
               <p id="deskripsi">
-                Lorem Ipsum adalah contoh teks atau dummy dalam industri
-                percetakan dan penataan huruf atau typesetting. Lorem Ipsum
-                telah menjadi standar contoh teks sejak tahun 1500an, saat
-                seorang tukang cetak yang tidak dikenal mengambil sebuah
-                kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh
-                huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah
-                beralih ke penataan huruf elektronik, tanpa ada perubahan
-                apapun. Ia mulai dipopulerkan pada tahun 1960 dengan
-                diluncurkannya lembaran-lembaran Letraset yang menggunakan
-                kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya
-                perangkat lunak Desktop Publishing seperti Aldus PageMaker juga
-                memiliki versi Lorem Ipsum.
+                {location.description}
               </p>
             </Container>
             <Container className="my-5">
@@ -101,7 +90,7 @@ function Details() {
             <Container className="my-5">
               <h2 id="title">Photos & Videos</h2>
               <Row className="my-3">
-                {/* {galery.map((item) => {
+                {galery.map((item) => {
                   return (
                     <Col key={item.id}>
                       <img
@@ -111,7 +100,7 @@ function Details() {
                       />
                     </Col>
                   );
-                })} */}
+                })}
                 <Col>
                   <img id="galeri" src={contoh} alt="1" />
                 </Col>
@@ -154,7 +143,7 @@ function Details() {
             </Container>
             <Footer />
           </>
-        {/* )} */}
+        )}
       </div>
     );
 }

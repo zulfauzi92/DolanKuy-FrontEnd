@@ -11,6 +11,8 @@ import { BrowserRouter as Router,
     Route,
     Link
 } from 'react-router-dom';
+import { baseURL } from '../Utils/api';
+import axios from "axios";
 
 const brand = {
     color: '#FF6329',
@@ -30,6 +32,29 @@ const buttonCard = {
 };
 
 function ListWisata() {
+    const [listLocation, setListLocation] = React.useState();
+    const [galery, setGalery] = React.useState();
+    const [distance, setDistance] = React.useState();
+    const [loading, setLoading] = React.useState(true);
+
+    React.useEffect(() => {
+      axios
+        .get(`${baseURL}locations`, { data: { userLong: 1.104, userLat: 1.102 } })
+        .then((res) => {
+          console.log(res);
+          console.log(res.data);
+          setLoading(false);
+          setListLocation(res.data[0]);
+          setGalery(res.data[1]);
+          setDistance(res.data[2]);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+      return () => {};
+    }, []);
+
     return (
 
 
@@ -42,32 +67,21 @@ function ListWisata() {
                     </Col>
                 </Row>
                 <CardColumns className='my-2'>
-                    <Card style={{width: '22rem'}}>
-                        <Card.Img src={contoh} variant='top'/>
-                        <Card.Body>
-                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
-                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{width: '22rem'}}>
-                        <Card.Img src={contoh} variant='top'/>
-                        <Card.Body>
-                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
-                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{width: '22rem'}}>
-                        <Card.Img src={contoh} variant='top'/>
-                        <Card.Body>
-                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
-                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
-                        </Card.Body>
-                    </Card>
+                    {loading ? (<h1>Loading</h1>) : listLocation?.map((location) => (
+                        <Card style={{width: '22rem'}}>
+                            <Card.Img src={contoh} variant='top'/>
+                            <Card.Body>
+                                <Card.Title id="judulGambar">{location.name}</Card.Title>
+                                <Card.Text style={{fontFamily: 'Roboto'}}>{location.description}</Card.Text>
+                                <Link id="buttonCard" to={`/details/${location.id}`}>
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    ))}
                 </CardColumns>
             </Container>
+
             <Container className='my-5'>
                 <Row>
                     <Col className='mt-5'>
@@ -75,7 +89,7 @@ function ListWisata() {
                     </Col>
                 </Row>
                 <Container className="border" id="cardList">
-                        <Row>
+                    <Row >
                         <Col xs={6} md={4}>
                         <img id="imageListCard" src={contoh}></img>
                         </Col>
@@ -90,13 +104,23 @@ function ListWisata() {
                             <Button id="tagCard">Default</Button>
                             </Row>
                         </Col>
+                        
                         <Col xs={6} md={4}>
-                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
-                        <Button id="detailsButtonCard">Details</Button>
+                            
+                            <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
+                            
+                            
                         </Col>
+                        <Col xs={6} md={4}>
+                                <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                                </Link>
+                        </Col>
+                        
                     </Row>
+                    
                 </Container>
-
+                <br></br>
                 <Container className="border" id="cardList">
                         <Row>
                         <Col xs={6} md={4}>
@@ -114,12 +138,16 @@ function ListWisata() {
                             </Row>
                         </Col>
                         <Col xs={6} md={4}>
-                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
-                        <Button id="detailsButtonCard">Details</Button>
+                            <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>
+                        </Col>
+                        <Col xs={6} md={4}>
+                                <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                                </Link>
                         </Col>
                     </Row>
                 </Container>
-
+                <br></br>
                 <Container className="border" id="cardList">
                         <Row>
                         <Col xs={6} md={4}>
@@ -137,12 +165,16 @@ function ListWisata() {
                             </Row>
                         </Col>
                         <Col xs={6} md={4}>
-                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
-                        <Button id="detailsButtonCard">Details</Button>
+                            <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>
+                        </Col>
+                        <Col xs={6} md={4}>
+                                <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                                </Link>
                         </Col>
                     </Row>
                 </Container>
-
+                <br></br>
                 <Container className="border" id="cardList" >
                         <Row>
                         <Col xs={6} md={4}>
@@ -160,52 +192,16 @@ function ListWisata() {
                             </Row>
                         </Col>
                         <Col xs={6} md={4}>
-                        <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>    
-                        <Button id="detailsButtonCard">Details</Button>
+                            <Button id="mapsCard"><MdPlace/>Patehan,Jogja</Button>
                         </Col>
+                        <Col xs={6} md={4}>
+                                <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                                </Link>
+                        </Col>
+                        
                     </Row>
                 </Container>
-
-                    {/* <Card >
-                        <Card.Body id="cardHorizontal">
-                            <Card.Img id="imageCardHorizontal" src={contoh}/>
-                            <Card.Title>Wisata Taman Sari, Menghayalkan Para Putri</Card.Title>
-                            <Card.Text>
-                            Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.
-                            </Card.Text>
-                            <Button id="cardListButton">Details</Button>
-                        </Card.Body>
-                    </Card>
-                
-                 */}
-                   
-               
-                {/* <CardColumns className='my-2'>
-                    <Card style={{width: '22rem'}}>
-                        <Card.Img src={contoh} variant='top'/>
-                        <Card.Body>
-                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
-                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{width: '22rem'}}>
-                        <Card.Img src={contoh} variant='top'/>
-                        <Card.Body>
-                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
-                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{width: '22rem'}}>
-                        <Card.Img src={contoh} variant='top'/>
-                        <Card.Body>
-                            <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
-                            <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
-                        </Card.Body>
-                    </Card>
-                </CardColumns> */}
             </Container>
             <Footer/>
         </div>

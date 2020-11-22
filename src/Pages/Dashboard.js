@@ -6,8 +6,37 @@ import contoh1 from '../Components/Gallery/contoh1.jpg';
 import contoh2 from '../Components/Gallery/contoh2.jpg';
 import '../Components/Components.css'
 import {Button, Container, Carousel, Card, CardColumns} from 'react-bootstrap';
+import { BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom';
+import { baseURL } from '../Utils/api';
+import axios from "axios";
 
 function Dashboard() {
+    const [listLocation, setListLocation] = React.useState();
+    const [galery, setGalery] = React.useState();
+    const [distance, setDistance] = React.useState();
+    const [loading, setLoading] = React.useState(true);
+
+    React.useEffect(() => {
+      axios
+        .get(`${baseURL}locations`, { data: { userLong: 1.104, userLat: 1.102 } })
+        .then((res) => {
+          console.log(res);
+          console.log(res.data[1]);
+          setLoading(false);
+          setListLocation(res.data[0][0]);
+          setGalery(res.data[1]);
+          setDistance(res.data[2]);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
+      return () => {};
+    }, []);
     return (
         <div>
             <NavbarTop/>
@@ -37,28 +66,34 @@ function Dashboard() {
             <Container className='my-5'>
                 <h2 id="brand">Tempat Wisata Indonesia</h2>
                 <CardColumns className='my-3'>
-                    <Card style={{width: '22rem'}}>
+                    <Card style={{width: '100%'}}>
                         <Card.Img src={contoh} variant='top'/>
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
+                            <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
-                    <Card style={{width: '22rem'}}>
+                    <Card style={{width: '100%'}}>
                         <Card.Img src={contoh} variant='top'/>
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
+                            <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
-                    <Card style={{width: '22rem'}}>
+                    <Card style={{width: '100%'}}>
                         <Card.Img src={contoh} variant='top'/>
                         <Card.Body>
                             <Card.Title id="judulGambar">Wisata Taman Sari, Mengkhayalkan Para Putri</Card.Title>
                             <Card.Text style={{fontFamily: 'Roboto'}}>Taman Sari berada di Kampung Taman Sari No. 310, Taman, Patehan, Kraton, Jogja. Dahulu lokasi ini merupakan tempat pemandian yang berkaitan erat dengan kerajaan Jogja.</Card.Text>
-                            <Button id="buttonCard" variant='block'>Details</Button>
+                            <Link id="buttonCard" to="/details">
+                                    <Button id="buttonCard" variant='block'>Details</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                 </CardColumns>
