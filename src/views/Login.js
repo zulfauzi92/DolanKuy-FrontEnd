@@ -53,6 +53,7 @@ function Login(){
                     <Col md={8} xs={12}>
                         <a href="#pablo">
                             <img
+                                style={{maxHeight:'600px'}}
                                 alt="..."
                                 className="avatar border-gray"
                                 src={require("assets/img/login-01.png")}
