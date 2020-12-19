@@ -2,7 +2,6 @@ import Cookies from "js-cookie";
 
 export const login = (user) => {
   Cookies.set("USER", user.token)
-  //localStorage.setItem("USER", user.token);
 };
 
 export const id = (user) => {
@@ -15,8 +14,8 @@ export const logout = () => {
 };
 
 export const isLogin = () => {
-  if (Cookies.get("USER")) {
-    return true;
+  if (Cookies.get("USER") === undefined) {
+    return false;
   }
-  return false;
+  return true;
 };
