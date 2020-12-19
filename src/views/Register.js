@@ -11,7 +11,7 @@ import Cookies from 'js-cookie';
 import { useHistory } from "react-router-dom";
 import { isLogin, login } from '../Utils/auth';
 
-function Login(){ 
+function Register(){ 
     const history = useHistory();
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -27,17 +27,11 @@ function Login(){
 
     const onSubmit = () => {
         console.log("masuk submit");
-        axios.post(`${baseURL}login`, {
+        axios.post(`${baseURL}register`, {
             email: email,
             password: password,
         })
-        .then(function (response) {
-        console.log(response.data);
 
-        login(response.data);
-        
-        history.push("/akomodasi");
-        })
         .catch(function (error) {
             setError(true);
         });
@@ -56,7 +50,7 @@ function Login(){
                                 style={{maxHeight:'600px'}}
                                 alt="..."
                                 className="avatar border-gray"
-                                src={require("assets/img/login-01.png")}
+                                src={require("assets/img/login-02.png")}
                             />
                         </a>
                     </Col>
@@ -67,7 +61,7 @@ function Login(){
                         <div className="container">
                             <div className="row justify-content-center">
                                 <div className="col-md-12">
-                                    <h2>Login DolanKuy</h2>
+                                    <h2>Register DolanKuy</h2>
                                     <form>
                                         <div className="form-group">
                                             <label for="exampleInputEmail1">Email</label>
@@ -94,4 +88,4 @@ function Login(){
     );
 }
 
-export default Login;
+export default Register;

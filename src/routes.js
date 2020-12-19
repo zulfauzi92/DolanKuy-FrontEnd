@@ -6,6 +6,7 @@ import Upgrade from "views/Upgrade.js";
 import UserPage from "views/UserPage.js";
 import Akomodasi from "views/Akomodasi.js";
 import Login from "views/Login.js";
+import Register from "views/Register.js";
 import Details from "views/Details.js";
 
 var dashRoutes = [
@@ -71,6 +72,13 @@ var dashRoutes = [
     name: "Details",
     icon: "objects_spaceship",
     component: Details,
+    layout: "/admin",
+  },
+  {
+    path: "/register",
+    name: "Register",
+    icon: "objects_spaceship",
+    component: Register,
     layout: "/admin",
   },
 ];
