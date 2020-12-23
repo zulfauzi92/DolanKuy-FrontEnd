@@ -44,10 +44,9 @@ function User() {
     <>
       <PanelHeader size="md" />
       <div className="content" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-      <Col md={9} xs={12}>
+      <Col md={8} xs={12}>
         <Row>
           <Col md={8}>
-
           <Card>
               <CardHeader>
                 <h5 className="title">Profile Information</h5>

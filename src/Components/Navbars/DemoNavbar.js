@@ -20,7 +20,7 @@ import {
 } from "reactstrap";
 import routes from "routes.js";
 import logo from "assets/img/Dolankuylogo.png";
-import {isLogin} from "Utils/auth.js"
+import {isLogin, logout} from "Utils/auth.js"
 
 class Header extends React.Component {
     state = {
@@ -173,7 +173,7 @@ class Header extends React.Component {
                                 </DropdownToggle>
                                     <DropdownMenu right>
                                     <DropdownItem tag="a" href="/admin/user-page">Profile</DropdownItem>
-                                    <DropdownItem tag="a" href="#">Logout</DropdownItem>
+                                    <DropdownItem tag="a" type="submit" href="/admin/login" onClick={logout}>Logout</DropdownItem>
                                 </DropdownMenu>
                             </Dropdown>
                             :
@@ -184,7 +184,7 @@ class Header extends React.Component {
                                 </Button>
                                 </NavItem>
                                 <NavItem style={{margin:'5px'}}>
-                                    <Button style={{margin:'0px', paddingTop:'14px', paddingBottom:'14px'}} href="/admin/akomodasi" block>
+                                    <Button style={{margin:'0px', paddingTop:'14px', paddingBottom:'14px'}} href="/admin/register" block>
                                         Register
                                     </Button>
                                 </NavItem>

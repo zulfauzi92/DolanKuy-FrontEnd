@@ -13,25 +13,23 @@ import { isLogin, login } from '../Utils/auth';
 
 function Register(){ 
     const history = useHistory();
+    const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [error, setError] = React.useState(false);
-    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
-    React.useEffect(() => {
-        if (email || password) {
-        setError(false);
-        }
-        return () => {};
-    }, [email, password]);
-
-    const onSubmit = () => {
+    const onRegister = () => {
         console.log("masuk submit");
         axios.post(`${baseURL}register`, {
-            email: email,
-            password: password,
+            name,
+            email,
+            password,
         })
-
+        .then((res) => {
+            console.log(res);
+            console.log(res.token);
+            history.push('/admin/login')
+        })
         .catch(function (error) {
             setError(true);
         });
@@ -64,6 +62,10 @@ function Register(){
                                     <h2>Register DolanKuy</h2>
                                     <form>
                                         <div className="form-group">
+                                            <label for="exampleInputEmail1">Name</label>
+                                            <input type="email" className="form-control" placeholder="Masukan email anda" onChange={(e) => setName(e.target.value)}  required/>
+                                        </div>
+                                        <div className="form-group">
                                             <label for="exampleInputEmail1">Email</label>
                                             <input type="email" className="form-control" placeholder="Masukan email anda" onChange={(e) => setEmail(e.target.value)}  required/>
                                         </div>
@@ -73,7 +75,7 @@ function Register(){
                                         </div>  
                                     </form>
                                     <br/>
-                                    <Button type="submit" class="btn btn-primary btn-lg" onClick={onSubmit} block>
+                                    <Button type="submit" class="btn btn-primary btn-lg" onClick={onRegister} block>
                                     Submit
                                     </Button>  
                                 </div>

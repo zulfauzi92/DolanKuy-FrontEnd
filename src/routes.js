@@ -68,7 +68,7 @@ var dashRoutes = [
     layout: "/admin",
   },
   {
-    path: "/details",
+    path: "/details/:id",
     name: "Details",
     icon: "objects_spaceship",
     component: Details,

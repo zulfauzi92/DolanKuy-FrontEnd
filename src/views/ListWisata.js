@@ -63,7 +63,7 @@ function ListWisata(){
       />
       <div className="content">
         <Row style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-          <Col md={9} xs={12}>
+          <Col md={8} xs={12}>
             {loading ? (<h1>Loading</h1>) : listLocation?.map((location) => (
             <Card className="card mb-6" style={{width: '100%'}}>
               <div className="row no-gutters">
