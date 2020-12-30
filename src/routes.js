@@ -8,6 +8,7 @@ import Akomodasi from "views/Akomodasi.js";
 import Login from "views/Login.js";
 import Register from "views/Register.js";
 import Details from "views/Details.js";
+import Error from "views/Error.js";
 
 var dashRoutes = [
   {
@@ -79,6 +80,13 @@ var dashRoutes = [
     name: "Register",
     icon: "objects_spaceship",
     component: Register,
+    layout: "/admin",
+  },
+  {
+    path: "/error",
+    name: "Error404",
+    icon: "objects_spaceship",
+    component: Error,
     layout: "/admin",
   },
 ];

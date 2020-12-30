@@ -190,8 +190,6 @@ class Header extends React.Component {
                                 </NavItem>
                             </>
                         }
-                        
-                        
                     </Nav>
                 </Collapse>
             </Container>
