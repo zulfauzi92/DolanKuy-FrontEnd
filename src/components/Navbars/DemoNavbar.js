@@ -20,7 +20,8 @@ import {
 } from "reactstrap";
 import routes from "routes.js";
 import logo from "assets/img/Dolankuylogo.png";
-import {isLogin, logout} from "Utils/auth.js"
+import {isLogin, logout} from "Utils/auth.js";
+import {Link} from "react-router-dom";
 
 class Header extends React.Component {
     state = {
@@ -127,9 +128,9 @@ class Header extends React.Component {
                     <span className="navbar-toggler-bar navbar-kebab" />
                 </NavbarToggler>
                 <NavbarBrand>
-                <a href="#">
-                    <img src={logo} style={{width:200, marginTop: -10, marginBottom: -15}} />
-                </a>
+                    <Link to="/admin/listwisata">
+                        <img src={logo} style={{width:200, marginTop: -10, marginBottom: -15}} />
+                    </Link>
                 </NavbarBrand>
                 <Collapse
                     isOpen={this.state.isOpen}
@@ -148,14 +149,18 @@ class Header extends React.Component {
                     </form>
                     <Nav navbar>
                         <NavItem style={{margin:'5px'}}>
-                            <NavLink className="nav-link" href="/admin/list-wisata">
-                                List Wisata
-                            </NavLink>
+                            <Link to="/admin/list-wisata">
+                                <NavLink className="nav-link">
+                                    List Wisata
+                                </NavLink>
+                            </Link>
                         </NavItem>
                         <NavItem style={{margin:'5px'}}>
-                            <NavLink className="nav-link" href="/admin/akomodasi">
-                                Akomodasi
-                            </NavLink>
+                            <Link to="/admin/akomodasi">
+                                <NavLink className="nav-link">
+                                    Akomodasi
+                                </NavLink>
+                            </Link>
                         </NavItem>
                         {
                             isLogin()
@@ -179,14 +184,18 @@ class Header extends React.Component {
                             :
                             <>
                                 <NavItem style={{margin:'5px'}}>
-                                <Button style={{margin:'0px', paddingTop:'14px', paddingBottom:'14px'}} href="/admin/login" block>
-                                    Login
-                                </Button>
+                                    <Link to="/admin/login">
+                                        <Button style={{margin:'0px', paddingTop:'14px', paddingBottom:'14px'}} block>
+                                            Login
+                                        </Button>
+                                    </Link>
                                 </NavItem>
                                 <NavItem style={{margin:'5px'}}>
-                                    <Button style={{margin:'0px', paddingTop:'14px', paddingBottom:'14px'}} href="/admin/register" block>
-                                        Register
-                                    </Button>
+                                    <Link to="/admin/register">
+                                        <Button style={{margin:'0px', paddingTop:'14px', paddingBottom:'14px'}} block>
+                                            Register
+                                        </Button>
+                                    </Link>
                                 </NavItem>
                             </>
                         }

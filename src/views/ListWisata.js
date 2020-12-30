@@ -74,7 +74,7 @@ function ListWisata(){
                   <CardBody>
                     <CardTitle>{location.name}</CardTitle>
                     <CardText>{location.description}</CardText>
-                    <Link id="buttonCard" to={`/details/${location.id}`}>
+                    <Link id="buttonCard" to={`/admin/details/${location.id}`}>
                         <Button id="buttonCard" color="primary" block>Details</Button>
                     </Link>
                   </CardBody>
