@@ -17,7 +17,7 @@ function Error(){
                         style={{maxHeight:'600px'}}
                         alt="..."
                         className="avatar border-gray"
-                        src={require("assets/img/login-01.png")}
+                        src={require("assets/img/error.png")}
                     />
                 </a>
             </Col>

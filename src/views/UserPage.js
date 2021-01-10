@@ -131,7 +131,7 @@ function User() {
               <img
                 alt="..."
                 className="avatar border-gray"
-                src={require("assets/img/mike.jpg")}
+                src={require("assets/img/default-avatar.png")}
               />
             </a>
           </Col>
