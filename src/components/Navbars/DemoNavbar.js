@@ -13,10 +13,6 @@ import {
     DropdownMenu,
     DropdownItem,
     Container,
-    InputGroup,
-    InputGroupText,
-    InputGroupAddon,
-    Input,
 } from "reactstrap";
 import routes from "routes.js";
 import logo from "assets/img/Dolankuylogo.png";
@@ -136,16 +132,6 @@ class Header extends React.Component {
                     navbar
                     className="justify-content-end"
                 >
-                    <form>
-                        <InputGroup className="no-border">
-                            <Input placeholder="Search..." />
-                            <InputGroupAddon addonType="append">
-                                <InputGroupText>
-                                    <i className="now-ui-icons ui-1_zoom-bold" />
-                                </InputGroupText>
-                            </InputGroupAddon>
-                        </InputGroup>
-                    </form>
                     <Nav navbar>
                         <NavItem style={{margin:'5px'}}>
                             <Link to="/layouts/list-wisata">

@@ -988,7 +988,7 @@ fieldset[disabled]
 .input-group.no-border .form-control,
 .input-group.no-border .form-control + .input-group-prepend .input-group-text,
 .input-group.no-border .form-control + .input-group-append .input-group-text {
-  background-color: rgba(222, 222, 222, 0.3);
+  background-color: rgb(255, 255, 255);
   border: medium none; }
   .form-group.no-border .form-control:focus, .form-group.no-border .form-control:active, .form-group.no-border .form-control:active,
   .form-group.no-border .form-control + .input-group-prepend .input-group-text:focus,
@@ -1007,19 +1007,19 @@ fieldset[disabled]
   .input-group.no-border .form-control + .input-group-append .input-group-text:active,
   .input-group.no-border .form-control + .input-group-append .input-group-text:active {
     border: medium none;
-    background-color: rgba(222, 222, 222, 0.5); }
+    background-color: rgb(255, 255, 255); }
 
 .form-group.no-border .form-control:focus + .input-group-prepend .input-group-text,
 .form-group.no-border .form-control:focus + .input-group-append .input-group-text,
 .input-group.no-border .form-control:focus + .input-group-prepend .input-group-text,
 .input-group.no-border .form-control:focus + .input-group-append .input-group-text {
-  background-color: rgba(222, 222, 222, 0.5); }
+  background-color:  rgb(255, 255, 255); }
 
 .form-group.no-border .input-group-prepend .input-group-text,
 .form-group.no-border .input-group-append .input-group-text,
 .input-group.no-border .input-group-prepend .input-group-text,
 .input-group.no-border .input-group-append .input-group-text {
-  background-color: rgba(222, 222, 222, 0.3);
+  background-color: rgb(255, 255, 255);
   border: none; }
 
 .has-error .form-control-feedback, .has-error .control-label {
@@ -1081,7 +1081,7 @@ fieldset[disabled]
 
 .input-group-focus.no-border .input-group-prepend .input-group-text,
 .input-group-focus.no-border .input-group-append .input-group-text {
-  background-color: rgba(222, 222, 222, 0.5); }
+  background-color: rgb(255, 255, 255); }
 
 .input-group,
 .form-group {
@@ -1219,17 +1219,17 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: 2.5em;
-  margin-bottom: 30px; }
+  margin-bottom: 10px; }
 
 h3, .h3 {
   font-size: 2em;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   line-height: 1.4em; }
 
 h4, .h4 {
   font-size: 1.714em;
   line-height: 1.45em;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 15px; }
   h4 + .category,
   h4.title + .category, .h4 + .category,
@@ -1880,7 +1880,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
     .dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus,
     .bootstrap-select .dropdown-menu.inner li a:hover,
     .bootstrap-select .dropdown-menu.inner li a:focus {
-      background-color: rgba(222, 222, 222, 0.3);
+      background-color: rgb(255, 255, 255);
       outline: 0; }
     .dropdown-menu .dropdown-item.disabled, .dropdown-menu .dropdown-item:disabled,
     .bootstrap-select .dropdown-menu.inner li a.disabled,
@@ -4502,7 +4502,7 @@ Created using IcoMoon - icomoon.io
 .panel-header {
   height: 260px;
   padding-top: 80px;
-  padding-bottom: 45px;
+  padding-bottom: 10px;
   position: relative;
   background: #ebecf1;
   background-size: 105%; }

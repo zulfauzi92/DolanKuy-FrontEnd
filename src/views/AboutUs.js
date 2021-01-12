@@ -23,8 +23,8 @@ function AboutUs(){
                                         membandingkan review dari user lain
                                     </p>
                                 </Col>
-                                <Col md={1} xs={0}/>
-                                <Col md={5} xs={12}>
+                                <Col md={2} xs={0}/>
+                                <Col md={4} xs={12}>
                                     <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                         <img style={{width: '100%'}}
                                             alt="..."

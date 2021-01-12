@@ -147,13 +147,13 @@
     .form-control,
     .form-control + .input-group-prepend .input-group-text,
     .form-control + .input-group-append .input-group-text{
-        background-color: $opacity-gray-3;
+        background-color: $white-bg;
         border: medium none;
         &:focus,
         &:active,
         &:active{
             border: medium none;
-            background-color: $opacity-gray-5;
+            background-color: $opacity-gray-3;
         }
     }
 
@@ -161,7 +161,7 @@
         &:focus{
             & + .input-group-prepend .input-group-text,
             & + .input-group-append .input-group-text{
-                background-color: $opacity-gray-5;
+                background-color: $opacity-gray-3;
             }
         }
     }
