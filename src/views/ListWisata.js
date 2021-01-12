@@ -8,15 +8,9 @@ import {
   Col,
   Button,
 } from "reactstrap";
-import CarouselHeader from "components/CarouselHeader/CarouselHeader.js";
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
-import contoh from "assets/img/mike.jpg";
-import bg3 from "assets/img/bg1.jpg";
-import bg2 from "assets/img/bg3.jpg";
-import bg1 from "assets/img/bg4.jpg";
-import { BrowserRouter as Router,
-  Switch,
-  Route,
+import bg1 from "assets/img/pendakianpenanggungan.jpg";
+import { BrowserRouter as
   Link
 } from 'react-router-dom';
 import { baseURL } from '../Utils/api';
@@ -54,9 +48,7 @@ function ListWisata(){
             <h2 className="title">Selamat datang di DolanKuy</h2>
             <p className="category">
               DolanKuy adalah Aplikasi referensi wisata yang ada di Indonesia, 
-              berbasis 3 platform yaitu mobile, website dan desktop. dengan DolanKuy 
-              user bisa melihat list wisata dan akomodasi pada tempat wisata dengan 
-              membandingkan review dari user lain
+              berbasis 3 platform yaitu mobile, website dan desktop.
             </p>
           </div>
         }
@@ -73,7 +65,7 @@ function ListWisata(){
                 <div className="col-md-7">
                   <CardBody>
                     <CardTitle>{location.name}</CardTitle>
-                    <CardText>{location.description}</CardText>
+                    <CardText style={{overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}>{location.description}</CardText>
                     <Link id="buttonCard" to={`/admin/details/${location.id}`}>
                         <Button id="buttonCard" color="primary" block>Details</Button>
                     </Link>

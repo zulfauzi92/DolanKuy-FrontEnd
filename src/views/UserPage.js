@@ -18,15 +18,16 @@ import { BrowserRouter as Router,
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
 import { baseURL } from '../Utils/api';
 import axios from "axios";
+import Cookies from "js-cookie";
 
-function User() {
+function UserPage() {
 
   const [profile, setProfile] = React.useState();
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     axios
-      .get(`${baseURL}me`)
+      .get(`${baseURL}me`, {headers: {Authorization: Cookies.get("USER")}})
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -45,88 +46,91 @@ function User() {
       <PanelHeader size="md" />
       <div className="content" style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
       <Col md={8} xs={12}>
+      {loading ? (<h1>Loading</h1>) : profile? (
         <Row>
-          <Col md={8}>
+          <Col md={10}>
+          
           <Card>
-              <CardHeader>
-                <h5 className="title">Profile Information</h5>
-              </CardHeader>
-              <CardBody>
+            <CardHeader>
+              <h5 className="title">Profile Information</h5>
+            </CardHeader>
+            <CardBody>
+              <Row>
+                <Col md={12}>
+                  <FormGroup>
+                    <label>Name</label>
+                    <br/>
+                    <h6>{profile.nama}</h6>
+                  </FormGroup>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={12}>
+                  <FormGroup>
+                    <label>Email</label>
+                    <br/>
+                    <h6>Your Email</h6>
+                  </FormGroup>
+                </Col>
+              </Row>
+            </CardBody>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h5 className="title">Edit Profile</h5>
+            </CardHeader>
+            <CardBody>
+              <Form>
                 <Row>
-                  <Col md={12}>
+                  <Col md="12">
                     <FormGroup>
                       <label>Name</label>
-                      <br/>
-                      <h6>Your Name</h6>
+                      <Input
+                        defaultValue="Name"
+                        placeholder="Name"
+                        type="text"
+                      />
                     </FormGroup>
                   </Col>
                 </Row>
                 <Row>
-                  <Col md={12}>
+                  <Col md="12">
                     <FormGroup>
                       <label>Email</label>
-                      <br/>
-                      <h6>Your Email</h6>
+                      <Input
+                        defaultValue="Email"
+                        placeholder="Email"
+                        type="text"
+                      />
                     </FormGroup>
                   </Col>
                 </Row>
-              </CardBody>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <h5 className="title">Edit Profile</h5>
-              </CardHeader>
-              <CardBody>
-                <Form>
-                  <Row>
-                    <Col md="12">
-                      <FormGroup>
-                        <label>Name</label>
-                        <Input
-                          defaultValue="Name"
-                          placeholder="Name"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="12">
-                      <FormGroup>
-                        <label>Email</label>
-                        <Input
-                          defaultValue="Email"
-                          placeholder="Email"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="12">
-                      <FormGroup>
-                        <label>Password</label>
-                        <Input
-                          defaultValue="Password"
-                          placeholder="Password"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="12">
-                      <Link id="buttonCard">
-                          <Button id="buttonCard" color="primary" block>Save</Button>
-                      </Link>
-                    </Col>
-                  </Row>
-                </Form>
-              </CardBody>
-            </Card>
+                <Row>
+                  <Col md="12">
+                    <FormGroup>
+                      <label>Password</label>
+                      <Input
+                        defaultValue="Password"
+                        placeholder="Password"
+                        type="text"
+                      />
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md="12">
+                    <Link id="buttonCard">
+                        <Button id="buttonCard" color="primary" block>Save</Button>
+                    </Link>
+                  </Col>
+                </Row>
+              </Form>
+            </CardBody>
+          </Card>
+          
           </Col>
-          <Col md="4">
+          <Col md="2">
             <a href="#pablo" onClick={(e) => e.preventDefault()}>
               <img
                 alt="..."
@@ -136,10 +140,11 @@ function User() {
             </a>
           </Col>
         </Row>
+      ):(<h1>Error</h1>)}
       </Col>
       </div>
     </>
   );
 }
 
-export default User;
+export default UserPage;

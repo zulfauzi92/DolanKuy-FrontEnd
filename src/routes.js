@@ -9,6 +9,7 @@ import Login from "views/Login.js";
 import Register from "views/Register.js";
 import Details from "views/Details.js";
 import Error from "views/Error.js";
+import AboutUs from "views/AboutUs.js";
 
 var dashRoutes = [
   {
@@ -33,7 +34,7 @@ var dashRoutes = [
     layout: "/layouts",
   },
   {
-    path: "/user-page",
+    path: "/userpage",
     name: "User Profile",
     icon: "users_single-02",
     component: UserPage,
@@ -84,7 +85,7 @@ var dashRoutes = [
   },
   {
     path: "/error",
-    name: "Error404",
+    name: "Error",
     icon: "objects_spaceship",
     component: Error,
     layout: "/layouts",
@@ -93,7 +94,7 @@ var dashRoutes = [
     path: "/aboutus",
     name: "AboutUs",
     icon: "objects_spaceship",
-    component: Error,
+    component: AboutUs,
     layout: "/layouts",
   },
 ];

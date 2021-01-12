@@ -49,7 +49,7 @@ class Dashboard extends React.Component {
                 />
               );
             })}
-            <Redirect from="/admin" to="/admin/listwisata" />
+            <Redirect from="/layouts" to="/layouts/listwisata" />
           </Switch>
           <Footer fluid />
         </div>

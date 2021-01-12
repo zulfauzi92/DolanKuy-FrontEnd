@@ -28,7 +28,7 @@ function Register(){
         .then((res) => {
             console.log(res);
             console.log(res.token);
-            history.push('/admin/login')
+            history.push('/layouts/login')
         })
         .catch(function (error) {
             setError(true);

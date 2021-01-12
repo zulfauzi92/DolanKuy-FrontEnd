@@ -343,8 +343,7 @@
     position: relative;
     float: right;
     width: 100%;
-    background-color: $white-color;
-    background-color: #fdf5ec;
+    background-color: #fffaf4;
 
     @include transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
 
@@ -391,12 +390,10 @@
 
 .panel-header {
   height: max-content;
-  padding-top: 120px;
+  padding-top: 80px;
   padding-bottom: 15px;
   position: relative;
-  background-color: #fdf5ec;
-  margin-left: 20px;
-  margin-right: 20px;
+  background-color: #fffaf4;
 
   .header{
     .title{

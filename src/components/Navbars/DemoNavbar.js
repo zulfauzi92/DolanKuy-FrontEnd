@@ -110,7 +110,6 @@ class Header extends React.Component {
     render() {
         console.log(isLogin());
         return (
-        // add or remove classes depending if we are on full-screen-maps page or not
         <Navbar
             color="white"
             expand="xl"
@@ -128,7 +127,7 @@ class Header extends React.Component {
                     <span className="navbar-toggler-bar navbar-kebab" />
                 </NavbarToggler>
                 <NavbarBrand>
-                    <Link to="/admin/listwisata">
+                    <Link to="/layouts/listwisata">
                         <img src={logo} style={{width:200, marginTop: -10, marginBottom: -15}} />
                     </Link>
                 </NavbarBrand>
@@ -149,14 +148,14 @@ class Header extends React.Component {
                     </form>
                     <Nav navbar>
                         <NavItem style={{margin:'5px'}}>
-                            <Link to="/admin/list-wisata">
+                            <Link to="/layouts/list-wisata">
                                 <NavLink className="nav-link">
                                     List Wisata
                                 </NavLink>
                             </Link>
                         </NavItem>
                         <NavItem style={{margin:'5px'}}>
-                            <Link to="/admin/akomodasi">
+                            <Link to="/layouts/akomodasi">
                                 <NavLink className="nav-link">
                                     Akomodasi
                                 </NavLink>
@@ -177,21 +176,21 @@ class Header extends React.Component {
                                 </p>
                                 </DropdownToggle>
                                     <DropdownMenu right>
-                                    <DropdownItem tag="a" href="/admin/user-page">Profile</DropdownItem>
-                                    <DropdownItem tag="a" type="submit" href="/admin/login" onClick={logout}>Logout</DropdownItem>
+                                    <DropdownItem tag="a" href="/layouts/userpage">Profile</DropdownItem>
+                                    <DropdownItem tag="a" type="submit" href="/layouts/login" onClick={logout}>Logout</DropdownItem>
                                 </DropdownMenu>
                             </Dropdown>
                             :
                             <>
                                 <NavItem style={{margin:'5px'}}>
-                                    <Link to="/admin/login">
+                                    <Link to="/layouts/login">
                                         <Button style={{margin:'0px', paddingTop:'14px', paddingBottom:'14px'}} block>
                                             Login
                                         </Button>
                                     </Link>
                                 </NavItem>
                                 <NavItem style={{margin:'5px'}}>
-                                    <Link to="/admin/register">
+                                    <Link to="/layouts/register">
                                         <Button style={{margin:'0px', paddingTop:'14px', paddingBottom:'14px'}} block>
                                             Register
                                         </Button>
