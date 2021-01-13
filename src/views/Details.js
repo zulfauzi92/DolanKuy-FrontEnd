@@ -64,51 +64,51 @@ function Details(props){
     return (
         <>
         <PanelHeader />
-        {loading ?
-            (<h1>Error</h1>) : (
+        <div className="content">
+        {loading ?(<h1>Error</h1>) : (
             <>
-            <div className="content">
-                <Row style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-                    <Col md={8} xs={12}>
-                        <Card>
-                            <CardBody>
-                                <Row className="my-0">
-                                {galery.map((item) => {
-                                    return (
-                                        <Col key={item.id}>
-                                        <CardImg
-                                            id="galeri"
-                                            src={IMAGE_URL + item.filename}
-                                            alt={item.filename}
-                                        />
-                                        </Col>
-                                    );
-                                })}
-                                </Row>
-                                <br/>
-                                <h2>{location.name}</h2>
-                                <h4 style={{ fontWeight: "bold" }}>
-                                    4.5
-                                    <TiStar id="icon" />
-                                </h4>
-                                <p id="deskripsi">
-                                    {location.description}
-                                </p>
-                                <p style={{ fontFamily: "Roboto" }}>
-                                    <FaMapMarkerAlt /><strong>Location:</strong> Nginden Intan
-                                    Timur II No.A2-41, Ngenden Jangkungan, Kec. Sukolilo, Kota
-                                    SBY, Jawa Timur 60118
-                                </p>
-                                <h3>Maps</h3>
-                                <div id="map" style={{top: 0, bottom: 0, width: '100%'}}>Longitude: {lang} | Latitude: {lat} | Zoom: {zoom}</div>
-                                <div ref={el => setMapContainer(el)} className='mapContainer' />
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-            </div>
-        </>
+                <div className="header text-center">
+                    <Row style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+                        <Col md={8} xs={12}>
+                            <Row>
+                                <Col md={8} xs={12} style={{justifyContent:'center', alignItems:'center'}}>
+                                    <Card>
+                                        <CardBody>
+                                            <br/>
+                                            <h2 style={{ fontFamily: "Roboto", textAlign:"left", fontWeight:600}}>{location.name}</h2>
+                                            <p id="deskripsi" style={{ fontFamily: "Roboto", textAlign:"left"}}>
+                                                {location.description}
+                                            </p>
+                                            <p style={{ fontFamily: "Roboto", textAlign:"left"}}>
+                                                <FaMapMarkerAlt /><strong>Location:</strong> {location.address}
+                                            </p>
+                                            <h4 style={{ fontFamily: "Roboto", textAlign:"left", fontWeight:600}}>Maps</h4>
+                                            <div id="map" style={{top: 0, bottom: 0, width: '100%', fontFamily: "Roboto", textAlign:"left",}}>Longitude: {lang} | Latitude: {lat} | Zoom: {zoom}</div>
+                                            <div ref={el => setMapContainer(el)} className='mapContainer' />
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                                <Col md={4} xs={12}>
+                                    {galery.map((item) => {
+                                        return (
+                                            <Col key={item.id}>
+                                                <img
+                                                    src={IMAGE_URL + item.filename} alt={item.filename}
+                                                />
+                                            </Col>
+                                        );
+                                    })}
+                                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden'}}>
+                                        <img height="210px" style={{flexShrink: 0, minWidth: '100%', minHeight: '100%'}} src={IMAGE_URL + location.image} alt="Image" />
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </div>
+            </>
         )} 
+        </div>
         </>  
     ); 
 }

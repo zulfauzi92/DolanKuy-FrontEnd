@@ -16,7 +16,7 @@ import PanelHeader from "components/PanelHeader/PanelHeader.js";
 import {Link} from "react-router-dom";
 import { baseURL, IMAGE_URL } from '../Utils/api';
 import axios from "axios";
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaInfoCircle } from 'react-icons/fa';
 
 function ListWisata(){
   const [listLocation, setListLocation] = React.useState();
@@ -28,7 +28,7 @@ function ListWisata(){
   React.useEffect(() => {
     setLoading(true)
     axios
-      .get(`${baseURL}locations?search=-${search}`, { data: { userLong: 1.104, userLat: 1.102 } })
+      .get(`${baseURL}locations`, { data: { userLong: 1.104, userLat: 1.102 } })
       .then((res) => {
         console.log(res);
         setListLocation(res.data['locations']);
@@ -41,29 +41,25 @@ function ListWisata(){
         setLoading(false);
       });
     return () => {};
-  }, [search]);
+  }, []);
 
-    const onSubmit = (e) => {
-      console.log("masuk submit")
-      setSearch("siwur");
-    };
-
-  // const onSubmit = () => {
-  //   axios
-  //     .get(`${baseURL}locations/search`, { params: { search }})
-  //     .then((res) => {
-  //       console.log(res);
-  //       console.log(res.data);
-  //       setListLocation(res.data['locations']);
-  //       setGalery(res.data['galery']);
-  //       setDistance(res.data[2]);
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setLoading(false);
-  //     });
-  // };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .get(`${baseURL}locations/search`, { params: { search }})
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        setListLocation(res.data.search_result);
+        setGalery(res.data['galery']);
+        setDistance(res.data[2]);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
+  };
 
   return (
     <>
@@ -74,7 +70,7 @@ function ListWisata(){
                   <Col md={8} xs={12}>
                       <Row>
                           <Col md={6} xs={12} style={{justifyContent:'center', alignItems:'center', paddingTop: '70px'}}>
-                            <h2 className="title" style={{textAlign:"left"}}>Mau kemana kamu hari ini?</h2>
+                            <h2 className="title" style={{textAlign:"left"}}>Mau liburan kemana nih kamu?</h2>
                             <p className="category" style={{textAlign:"left", marginBottom:"30px"}}>
                               Cari tujuan wisata kamu dengan DolanKuy
                             </p>
@@ -83,7 +79,7 @@ function ListWisata(){
                                 <Input placeholder="Cari tujuan kamu" onChange={(e) => setSearch(e.target.value)}/>
                                   <InputGroupAddon addonType="append">
                                     <InputGroupText>
-                                      <i className="now-ui-icons ui-1_zoom-bold"/>
+                                      <i className="now-ui-icons ui-1_zoom-bold" onClick={onSubmit}/>
                                     </InputGroupText>
                                   </InputGroupAddon>
                               </InputGroup>
@@ -107,13 +103,13 @@ function ListWisata(){
             {loading ? (<h1>Loading</h1>) : listLocation?.map((location) => (
             <Card className="card mb-6" style={{width: '100%'}}>
               <div className="row no-gutters">
-                <div className="col-md-5" style={{justifyContent:'center', alignItems:'center'}}>
-                  <img height="210px" src={IMAGE_URL + location.image} alt="Image" />
+                <div className="col-md-5" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden'}}>
+                  <img height="210px" style={{flexShrink: 0, minWidth: '100%', minHeight: '100%'}} src={IMAGE_URL + location.image} alt="Image" />
                 </div>
                 <div className="col-md-7">
                   <CardBody>
                     <CardTitle><h5 style={{fontWeight:'600'}}>{location.name}</h5></CardTitle>
-                    <CardText style={{overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}><i style={{marginRight:8, color:"blue"}} className="now-ui-icons travel_info"/>{location.description}</CardText>
+                    <CardText style={{overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}><FaInfoCircle />{location.description}</CardText>
                     <CardText style={{overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}><FaMapMarkerAlt />{location.address}</CardText>
                     <Link to={`/layouts/details/${location.id}`}>
                       <Button id="buttonCard" color="primary" block>Details</Button>

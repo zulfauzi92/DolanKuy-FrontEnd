@@ -15,12 +15,11 @@ function AboutUs(){
                         <Col md={8} xs={12}>
                             <Row>
                                 <Col md={6} xs={12} style={{justifyContent:'center', alignItems:'center', paddingTop: '70px'}}>
-                                    <h2 className="title" style={{textAlign:"left"}}>Selamat datang di DolanKuy</h2>
-                                    <p className="category" style={{textAlign:"left"}}>
+                                    <h2 className="title" style={{textAlign:"left", paddingBottom:"15px"}}>Selamat datang di DolanKuy</h2>
+                                    <p className="category" style={{textAlign:"left", marginBottom:"30px"}}>
                                         DolanKuy adalah Aplikasi referensi wisata yang ada di Indonesia, 
-                                        berbasis 3 platform yaitu mobile, website dan desktop. dengan DolanKuy 
-                                        user bisa melihat list wisata dan akomodasi pada tempat wisata dengan 
-                                        membandingkan review dari user lain
+                                        berbasis 3 platform yaitu mobile, website dan desktop. Dengan DolanKuy 
+                                        user bisa melihat lokasi Wisata dan Lokasi Akomodasi pada tempat wisata
                                     </p>
                                 </Col>
                                 <Col md={2} xs={0}/>
@@ -282,19 +281,43 @@ function AboutUs(){
                             </ul>
                         </Col>
                     </Row>
-                    <h4 className="title" style={{textAlign:"center"}}>Sponsors</h4>
-                    <Row>
+                    <h4 className="title" style={{textAlign:"center"}}>Sponsored By</h4>
+                    <Row style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
                         <Col md={2} xs={4} style={{justifyContent:'center', alignItems:'center', height: '100%'}}>
                             <div class="card" style={{width: '100%'}}>
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                    <img style={{width: '100%'}} src={require("assets/img/Profilku.png")} />
+                                    <img style={{width: '100%'}} src={require("assets/img/Virtuahive.png")} />
                                 </a>
                             </div>
                         </Col>
                         <Col md={2} xs={4} style={{justifyContent:'center', alignItems:'center', height: '100%'}}>
                             <div class="card" style={{width: '100%'}}>
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                    <img style={{width: '100%'}} src={require("assets/img/Virtuahive.png")} />
+                                    <img style={{width: '100%'}} src={require("assets/img/RasyidT.png")} />
+                                </a>
+                            </div>
+                        </Col>
+                        <Col md={2} xs={4} style={{justifyContent:'center', alignItems:'center', height: '100%'}}>
+                            <div class="card" style={{width: '100%'}}>
+                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                                    <img style={{width: '100%'}} src={require("assets/img/PTI.png")} />
+                                </a>
+                            </div>
+                        </Col>
+                        <Col md={2} xs={4} style={{justifyContent:'center', alignItems:'center', height: '100%'}}>
+                            <div class="card" style={{width: '100%'}}>
+                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                                    <img style={{width: '100%'}} src={require("assets/img/Maulidan.png")} />
+                                </a>
+                            </div>
+                        </Col>
+                    </Row>
+                    <h4 className="title" style={{textAlign:"center"}}>Supported By</h4>
+                    <Row style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+                        <Col md={2} xs={4} style={{justifyContent:'center', alignItems:'center', height: '100%'}}>
+                            <div class="card" style={{width: '100%'}}>
+                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                                    <img style={{width: '100%'}} src={require("assets/img/Sindika.png")} />
                                 </a>
                             </div>
                         </Col>
@@ -308,13 +331,6 @@ function AboutUs(){
                         <Col md={2} xs={4} style={{justifyContent:'center', alignItems:'center', height: '100%'}}>
                             <div class="card" style={{width: '100%'}}>
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                    <img style={{width: '100%'}} src={require("assets/img/Sindika.png")} />
-                                </a>
-                            </div>
-                        </Col>
-                        <Col md={2} xs={4} style={{justifyContent:'center', alignItems:'center', height: '100%'}}>
-                            <div class="card" style={{width: '100%'}}>
-                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
                                     <img style={{width: '100%'}} src={require("assets/img/Rasyid.png")} />
                                 </a>
                             </div>
@@ -322,7 +338,14 @@ function AboutUs(){
                         <Col md={2} xs={4} style={{justifyContent:'center', alignItems:'center', height: '100%'}}>
                             <div class="card" style={{width: '100%'}}>
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                    <img style={{width: '100%'}} src={require("assets/img/RasyidT.png")} />
+                                    <img style={{width: '100%'}} src={require("assets/img/Profilku.png")} />
+                                </a>
+                            </div>
+                        </Col>
+                        <Col md={2} xs={4} style={{justifyContent:'center', alignItems:'center', height: '100%'}}>
+                            <div class="card" style={{width: '100%'}}>
+                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                                    <img style={{width: '100%'}} src={require("assets/img/Alterra.png")} />
                                 </a>
                             </div>
                         </Col>

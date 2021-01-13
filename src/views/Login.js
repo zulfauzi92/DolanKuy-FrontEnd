@@ -67,20 +67,20 @@ function Login(){
                         <div className="container">
                             <div className="row justify-content-center">
                                 <div className="col-md-12">
-                                    <h2>Login DolanKuy</h2>
+                                    <h2 className="title" style={{textAlign:"center"}}>Login</h2>
                                     <form>
                                         <div className="form-group">
                                             <label for="exampleInputEmail1">Email</label>
-                                            <input type="email" className="form-control" placeholder="Masukan email anda" onChange={(e) => setEmail(e.target.value)}  required/>
+                                            <input type="email" className="form-control" placeholder="Masukan Email kamu" onChange={(e) => setEmail(e.target.value)}  required/>
                                         </div>
                                         <div className="form-group">
                                             <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Masukan password anda" />
+                                            <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Masukan Password kamu" />
                                         </div>  
                                     </form>
                                     <br/>
                                     <Button type="submit" class="btn btn-primary btn-lg" onClick={onSubmit} block>
-                                        Submit
+                                        Login
                                     </Button>  
                                 </div>
                             </div>

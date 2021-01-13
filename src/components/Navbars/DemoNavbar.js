@@ -136,14 +136,21 @@ class Header extends React.Component {
                         <NavItem style={{margin:'5px'}}>
                             <Link to="/layouts/list-wisata">
                                 <NavLink className="nav-link">
-                                    List Wisata
+                                    Lokasi Wisata
                                 </NavLink>
                             </Link>
                         </NavItem>
                         <NavItem style={{margin:'5px'}}>
                             <Link to="/layouts/akomodasi">
                                 <NavLink className="nav-link">
-                                    Akomodasi
+                                    Lokasi Akomodasi
+                                </NavLink>
+                            </Link>
+                        </NavItem>
+                        <NavItem style={{margin:'5px'}}>
+                            <Link to="/layouts/aboutus">
+                                <NavLink className="nav-link">
+                                    Tentang Kami
                                 </NavLink>
                             </Link>
                         </NavItem>
@@ -162,7 +169,7 @@ class Header extends React.Component {
                                 </p>
                                 </DropdownToggle>
                                     <DropdownMenu right>
-                                    <DropdownItem tag="a" href="/layouts/userpage">Profile</DropdownItem>
+                                    {/* <DropdownItem tag="a" href="/layouts/userpage">Profile</DropdownItem> */}
                                     <DropdownItem tag="a" type="submit" href="/layouts/login" onClick={logout}>Logout</DropdownItem>
                                 </DropdownMenu>
                             </Dropdown>
