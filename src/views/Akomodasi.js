@@ -16,9 +16,7 @@ import {
 } from "reactstrap";
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
 import bg1 from "assets/img/bg4.jpg";
-import { BrowserRouter as Router,
-  Switch,
-  Route,
+import { BrowserRouter as
   Link
 } from 'react-router-dom';
 import { baseURL } from '../Utils/api';

@@ -10,9 +10,7 @@ import {
 } from "reactstrap";
 import CarouselHeader from "components/CarouselHeader/CarouselHeader.js";
 import bg1 from "assets/img/bg4.jpg";
-import { BrowserRouter as Router,
-    Switch,
-    Route,
+import { BrowserRouter as
     Link
 } from 'react-router-dom';
 

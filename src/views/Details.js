@@ -8,22 +8,13 @@ import {
     Container,
     CardImg
 } from "reactstrap";
-import {
-    withScriptjs,
-    withGoogleMap,
-    GoogleMap,
-    Marker,
-} from "react-google-maps";
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { TiStar } from 'react-icons/ti';
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
-import bg1 from "assets/img/bg4.jpg";
-import { BrowserRouter as Link } from 'react-router-dom';
 import { baseURL } from '../Utils/api';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { IMAGE_URL } from '../Utils/api';
-import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
 
 function Details(props){
@@ -33,7 +24,7 @@ function Details(props){
     const [loading, setLoading] = React.useState(true);
     const [lang, setLang] = React.useState(5);
     const [lat, setLat] = React.useState(34);
-    const [zoom, setZoom] = React.useState(2);
+    const [zoom, setZoom] = React.useState(10);
     const [map, setMap] = React.useState();
     const [mapContainer, setMapContainer] = React.useState('');
     
@@ -44,6 +35,8 @@ function Details(props){
             console.log(res);
             setGalery(res.data.currentGalery);
             setLocation(res.data.detail_location);
+            setLat(res.data.detail_location.latitude);
+            setLang(res.data.detail_location.longitude);
         })
         .catch((err) => {
             console.log(err);
@@ -57,12 +50,14 @@ function Details(props){
     React.useEffect(() => {
         if (mapContainer !== '') {
             mapboxgl.accessToken = "pk.eyJ1IjoiYmFyYmllc2hhYnJpbmEiLCJhIjoiY2s4ZDZoYzd2MHF6ZjNmdDdvdzl4cW5hdSJ9.YKh51Ej18Qm2_PiD267B0w"
-            setMap(new mapboxgl.Map({
+            var mapgl = new mapboxgl.Map({
                 container: mapContainer,
                 style: 'mapbox://styles/mapbox/streets-v11',
                 center: [lang, lat],
                 zoom: zoom
-            }));
+            })
+            new mapboxgl.Marker().setLngLat([lang, lat]).addTo(mapgl);
+            setMap(mapgl);
         }
     }, [mapContainer, lang, lat, zoom]);
 
@@ -100,12 +95,12 @@ function Details(props){
                                     {location.description}
                                 </p>
                                 <p style={{ fontFamily: "Roboto" }}>
-                                    <FaMapMarkerAlt /> <strong>Location:</strong> Nginden Intan
+                                    <FaMapMarkerAlt /><strong>Location:</strong> Nginden Intan
                                     Timur II No.A2-41, Ngenden Jangkungan, Kec. Sukolilo, Kota
                                     SBY, Jawa Timur 60118
                                 </p>
                                 <h3>Maps</h3>
-                                <div>Longitude: {lang} | Latitude: {lat} | Zoom: {zoom}</div>
+                                <div id="map" style={{top: 0, bottom: 0, width: '100%'}}>Longitude: {lang} | Latitude: {lat} | Zoom: {zoom}</div>
                                 <div ref={el => setMapContainer(el)} className='mapContainer' />
                             </CardBody>
                         </Card>

@@ -13,11 +13,10 @@ import {
   Input,
 } from "reactstrap";
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
-import { BrowserRouter as
-  Link
-} from 'react-router-dom';
+import {Link} from "react-router-dom";
 import { baseURL, IMAGE_URL } from '../Utils/api';
 import axios from "axios";
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 function ListWisata(){
   const [listLocation, setListLocation] = React.useState();
@@ -115,8 +114,8 @@ function ListWisata(){
                   <CardBody>
                     <CardTitle><h5 style={{fontWeight:'600'}}>{location.name}</h5></CardTitle>
                     <CardText style={{overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}><i style={{marginRight:8, color:"blue"}} className="now-ui-icons travel_info"/>{location.description}</CardText>
-                    <CardText style={{overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}><i style={{marginRight:8, color:"red"}} className="now-ui-icons location_pin"/>{location.address}</CardText>
-                    <Link to={"/layouts/details/3"}>
+                    <CardText style={{overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis"}}><FaMapMarkerAlt />{location.address}</CardText>
+                    <Link to={`/layouts/details/${location.id}`}>
                       <Button id="buttonCard" color="primary" block>Details</Button>
                     </Link>
                   </CardBody>

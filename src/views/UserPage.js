@@ -10,9 +10,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { BrowserRouter as Router,
-  Switch,
-  Route,
+import { BrowserRouter as
   Link
 } from 'react-router-dom';
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
@@ -60,7 +58,7 @@ function UserPage() {
                   <FormGroup>
                     <label>Name</label>
                     <br/>
-                    <h6>{profile.nama}</h6>
+                    <h6>{profile.name}</h6>
                   </FormGroup>
                 </Col>
               </Row>
