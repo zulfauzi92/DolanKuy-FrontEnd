@@ -25,7 +25,7 @@ class Footer extends React.Component {
               <Row>
                 <Col md={2} xs={4}>
                   <img style={{width: '100%'}}
-                    src={require("assets/img/Dolankuylogo.png")}
+                    src={require("assets/img/dolankuylohokotak.png")}
                   />
                 </Col>
                 <Col md={5} xs={12} style={{paddingTop:"30px"}}>
