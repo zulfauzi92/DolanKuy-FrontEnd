@@ -25,7 +25,7 @@ class Footer extends React.Component {
               <Row>
                 <Col md={2} xs={4}>
                   <img style={{width: '100%'}}
-                    src={require("assets/img/mobil.png")}
+                    src={require("assets/img/Dolankuylogo.png")}
                   />
                 </Col>
                 <Col md={5} xs={12} style={{paddingTop:"30px"}}>
@@ -36,12 +36,12 @@ class Footer extends React.Component {
                 <Col md={2} xs={12} style={{paddingTop:"10px"}}>
                   <Link to="/layouts/listwisata">
                       <NavLink style={{fontWeight:"800"}}>
-                          List Wisata
+                          Lokasi Wisata
                       </NavLink>
                   </Link>
                   <Link to="/layouts/akomodasi">
                       <NavLink style={{fontWeight:"800"}}>
-                          Akomodasi
+                          Lokasi Akomodasi
                       </NavLink>
                   </Link>
                 </Col>
