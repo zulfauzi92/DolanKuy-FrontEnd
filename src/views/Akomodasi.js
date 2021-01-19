@@ -77,13 +77,13 @@ function Akomodasi(){
               <Card style={{width: '100%'}}>
                   <ListGroup flush>
                       <ListGroupItem style={{fontWeight: 'bold'}}>Kategori Akomodasi</ListGroupItem>
-                      <ListGroupItem tag="a" href="" onClick={(e) => {e.preventDefault();setCategory(2)}}>
+                      <ListGroupItem tag="a" href="" onClick={(e) => {e.preventDefault();setCategory(3)}}>
                         <i style={{margin:10}} className="now-ui-icons travel_istanbul" />Tempat Ibadah
                       </ListGroupItem>
                       <ListGroupItem tag="a"href="" onClick={(e) => {e.preventDefault();setCategory(5)}}>
                         <i style={{margin:10}} className="now-ui-icons objects_spaceship" />SPBU
                       </ListGroupItem>
-                      <ListGroupItem tag="a" href="" onClick={(e) => {e.preventDefault();setCategory(3)}}>
+                      <ListGroupItem tag="a" href="" onClick={(e) => {e.preventDefault();setCategory(2)}}>
                         <i style={{margin:10}} className="now-ui-icons objects_support-17" />Kuliner
                       </ListGroupItem>
                       <ListGroupItem tag="a" href="" onClick={(e) => {e.preventDefault();setCategory(4)}}>
